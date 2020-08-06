@@ -1,0 +1,34 @@
+// .button {
+//     background-color: #4CAF50; /* Green */
+//     border: none;
+//     color: white;
+//     padding: 15px 32px;
+//     text-align: center;
+//     text-decoration: none;
+//     display: inline-block;
+//     font-size: 16px;
+// }
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+html,body {
+    height:100vh;
+    display: flex;
+}
+
+#obox {
+    background-color: #ff803c;
+    
+}
+.row {
+    width:50%;
+    height:100%;
+}
+.row div {
+    width:50%;
+    height:100%;
+    float:left;
+}
