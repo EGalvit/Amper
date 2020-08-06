@@ -1,13 +1,14 @@
-// .button {
-//     background-color: #4CAF50; /* Green */
-//     border: none;
-//     color: white;
-//     padding: 15px 32px;
-//     text-align: center;
-//     text-decoration: none;
-//     display: inline-block;
-//     font-size: 16px;
-// }
+.button {
+    border: 1px;
+    width: 180px;
+    font-size: 20px;
+}
+
+.button:hover {
+    background-color: #ff803c;
+    border-color: #ff803c91;
+    box-shadow: 0 0px 10px #ff803c;
+}
 
 * {
     padding: 0;
@@ -17,6 +18,8 @@
 html,body {
     height:100vh;
     display: flex;
+    margin: 0;
+    overflow: hidden;
 }
 
 #obox {
@@ -32,3 +35,25 @@ html,body {
     height:100%;
     float:left;
 }
+
+#logininfo {
+    background-color: #2a2a2a;
+}
+
+#logininfo div {
+    position: relative;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+#box1, box2, box3 {
+    position: relative;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+#signup {
+    color: white;
+}
+
