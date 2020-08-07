@@ -1,0 +1,20 @@
+<header >
+    <div class="container">
+      <nav *ngIf="nav.visible">
+        <ul>
+          <li><a href="#" routerLink="/profil">Profil</a></li>
+          <li><a href="#" routerLink="/">Forside</a></li>
+          <li><a href="#" routerLink="/beskeder">Beskeder</a></li>
+        </ul>
+      </nav>
+      <div class="test">
+        <a routerLink="/" class="logo"><img border="0" alt="Amper" src="assets/img/AmperLogo.png" height="45px"></a>
+        <input type="text" placeholder="Søg">
+      </div>
+    </div>
+  </header>
+  
+  <div class="container">
+    <router-outlet></router-outlet>
+  </div>
+  
