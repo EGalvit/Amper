@@ -12,7 +12,6 @@ export class ForsideComponent implements OnInit {
 
   ngOnInit(): void {
     this.nav.show();
-    this.nav.doSomethingElseUseful();
   }
 
 }
