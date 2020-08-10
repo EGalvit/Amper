@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { NavbarService } from '../navbar/navbar.service';
 
 @Component({
   selector: 'app-forside',
@@ -8,10 +7,9 @@ import { NavbarService } from '../navbar/navbar.service';
 })
 export class ForsideComponent implements OnInit {
 
-  constructor( public nav: NavbarService ){ }
+  constructor(){ }
 
   ngOnInit(): void {
-    this.nav.show();
   }
 
 }
