@@ -1,0 +1,59 @@
+.button {
+    border: 1px;
+    width: 180px;
+    font-size: 20px;
+}
+
+.button:hover {
+    background-color: #ff803c;
+    border-color: #ff803c91;
+    box-shadow: 0 0px 10px #ff803c;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+html,body {
+    height:100vh;
+    display: flex;
+    margin: 0;
+    overflow: hidden;
+}
+
+#obox {
+    background-color: #ff803c;
+    
+}
+.row {
+    width:50%;
+    height:100%;
+}
+.row div {
+    width:50%;
+    height:100%;
+    float:left;
+}
+
+#logininfo {
+    background-color: #2a2a2a;
+}
+
+#logininfo div {
+    position: relative;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+#box1, box2, box3 {
+    position: relative;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+#signup {
+    color: white;
+}
+
