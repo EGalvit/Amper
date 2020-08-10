@@ -15,15 +15,14 @@ body {
     padding: 0;
 }
 
-.container {
-    position: absolute;
-    width: 80%;
-    margin: 0 auto;
-}
+// .container {
+//     // position: absolute;
+//     // width: 100%;
+//     // margin: 0 auto;
+// }
 
 .test {
-    margin-top: -.5em;
-    
+   
     input {
         width: 300px;
         margin-left: 1em;
@@ -32,8 +31,14 @@ body {
 
 header {
     background: $lightGray;
-    padding: 1em 0;
+    padding-top: 0.5em;
+    padding-bottom: 1.5em;
     height: 1.4em;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    margin: 0 auto;
+
 
     a {
         color: $text;
@@ -50,7 +55,7 @@ header {
 
         ul {
             list-style-type: none;
-            margin: 0px;
+            margin: .5em 0px 0px 0px;
             display: flex;
             padding: 0;
 
