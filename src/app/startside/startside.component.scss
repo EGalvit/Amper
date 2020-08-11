@@ -16,7 +16,7 @@
 }
 
 html,body {
-    height:100vh;
+    height: 100vh;
     display: flex;
     margin: 0;
     overflow: hidden;
@@ -57,3 +57,19 @@ html,body {
     color: white;
 }
 
+.header {
+    display: none;
+    visibility: hidden;
+}
+
+.navbar {
+    visibility: hidden;
+}
+
+#container {
+    visibility: hidden;
+}
+
+:host {
+    // visibility: hidden;
+}

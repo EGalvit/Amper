@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Router, NavigationEnd } from '@angular/router';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -12,5 +12,5 @@ export class AppComponent {
 
   constructor(router: Router) { 
     router.events.subscribe((url:any) => this.router = router.url);
-}
+  }
 }
