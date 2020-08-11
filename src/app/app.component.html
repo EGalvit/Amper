@@ -1,16 +1,16 @@
-<header>
+<header *ngIf="router != '/'">
   <div class="container">
     <nav>
       <ul>
         <li><a href="#" routerLink="/profil">Profil</a></li>
         <li><a href="#" routerLink="/forside">Forside</a></li>
         <li><a href="#" routerLink="/beskeder">Beskeder</a></li>
+        <div class="test">
+          <a routerLink="/" class="logo"><img border="0" alt="Amper" src="assets/img/AmperLogo.png" height="45px"></a>
+          <input type="text" placeholder="Søg">
+        </div>
       </ul>
     </nav>
-    <div class="test">
-      <a routerLink="/" class="logo"><img border="0" alt="Amper" src="assets/img/AmperLogo.png" height="45px"></a>
-      <input type="text" placeholder="Søg">
-    </div>
   </div>
 </header>
 

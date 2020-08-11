@@ -1,0 +1,67 @@
+$text: #ececec;
+$black: #000000;
+$darkGray: #2a2a2a;
+$midGray: #414141;
+$lightGray: #525252;
+$orange: #ff803c;
+
+
+body {
+    margin: 0;
+    font-family: 'Open Sans Condensed', sans-serif;
+    font-size: 18px;
+    padding: 0;
+}
+
+.container {
+    position: absolute;
+    width: 80%;
+    margin: 0 auto;
+}
+
+.test {
+    margin-top: -.5em;
+    
+    input {
+        width: 300px;
+        margin-left: 1em;
+    }
+}
+
+header {
+    background: $lightGray;
+    padding: 1em 0;
+    height: 1.4em;
+
+    a {
+        color: $text;
+        text-decoration: none;
+    }
+    a.logo {
+        font-weight: bold;
+        margin-left: 10em;
+        vertical-align: middle;
+    }
+
+    nav {
+        float: left;
+
+        ul {
+            list-style-type: none;
+            margin: 0px;
+            display: flex;
+            padding: 0;
+
+            li a {
+                padding: 1em 2em;
+                margin: .5px;
+                background-color: $darkGray;
+                border: 0px .5px solid $lightGray;
+                &:hover {
+                    background: lighten($darkGray, 5%);
+                    transition: 500ms;
+                }
+            }
+        }
+    }
+}
