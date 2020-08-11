@@ -57,3 +57,19 @@ html,body {
     color: white;
 }
 
+.header {
+    display: none;
+    visibility: hidden;
+}
+
+.navbar {
+    visibility: hidden;
+}
+
+#container {
+    visibility: hidden;
+}
+
+:host {
+    // visibility: hidden;
+}
