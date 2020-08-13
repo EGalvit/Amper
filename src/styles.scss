@@ -16,62 +16,57 @@ body {
 }
 
 // .container {
-//     // position: absolute;
-//     // width: 100%;
-//     // margin: 0 auto;
+//     position: absolute;
+//     width: 80%;
+//     margin: 0 auto;
 // }
 
-.test {
-   
-    input {
-        width: 300px;
-        margin-left: 1em;
-    }
-}
+// .test {
+//     margin-top: -.5em;
+    
+//     input {
+//         width: 300px;
+//         margin-left: 1em;
+//     }
+// }
 
-header {
-    background: $lightGray;
-    padding-top: 0.5em;
-    padding-bottom: 1.5em;
-    height: 1.4em;
-    position: fixed;
-    top: 0;
-    width: 100%;
-    margin: 0 auto;
+// header {
+//     background: $lightGray;
+//     padding: 1em 0;
+//     height: 1.4em;
 
+//     a {
+//         color: $text;
+//         text-decoration: none;
+//     }
+//     a.logo {
+//         font-weight: bold;
+//         margin-left: 10em;
+//         vertical-align: middle;
+//     }
 
-    a {
-        color: $text;
-        text-decoration: none;
-    }
-    a.logo {
-        font-weight: bold;
-        margin-left: 10em;
-        vertical-align: middle;
-    }
+//     nav {
+//         float: left;
 
-    nav {
-        float: left;
+//         ul {
+//             list-style-type: none;
+//             margin: 0px;
+//             display: flex;
+//             padding: 0;
 
-        ul {
-            list-style-type: none;
-            margin: .5em 0px 0px 0px;
-            display: flex;
-            padding: 0;
-
-            li a {
-                padding: 1em 2em;
-                margin: .5px;
-                background-color: $darkGray;
-                border: 0px .5px solid $lightGray;
-                &:hover {
-                    background: lighten($darkGray, 5%);
-                    transition: 500ms;
-                }
-            }
-        }
-    }
-}
+//             li a {
+//                 padding: 1em 2em;
+//                 margin: .5px;
+//                 background-color: $darkGray;
+//                 border: 0px .5px solid $lightGray;
+//                 &:hover {
+//                     background: lighten($darkGray, 5%);
+//                     transition: 500ms;
+//                 }
+//             }
+//         }
+//     }
+// }
 
 // h1 {
 //     margin-top: 2em;

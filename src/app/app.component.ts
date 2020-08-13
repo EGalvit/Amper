@@ -8,10 +8,9 @@ import { Router } from '@angular/router';
 })
 export class AppComponent {
   title = 'Amper';
-  router:string;
+  router: string;
+
   constructor(router: Router) { 
     router.events.subscribe((url:any) => this.router = router.url);
+  }
 }
-
-}
-
