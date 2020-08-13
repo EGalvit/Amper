@@ -40,36 +40,19 @@ html,body {
     background-color: #2a2a2a;
 }
 
-#logininfo div {
-    position: relative;
-    align-items: center;
-    display: flex;
-    justify-content: center;
-}
-#box1, box2, box3 {
-    position: relative;
-    align-items: center;
-    display: flex;
-    justify-content: center;
-}
+// #logininfo div {
+//     // position: relative;
+//     align-items: center;
+//     display: flex;
+//     // justify-content: center;
+// }
+// #box1, box2, box3 {
+//     // position: relative;
+//     // align-items: center;
+//     // display: flex;
+//     // justify-content: center;
+// }
 
 #signup {
     color: white;
-}
-
-.header {
-    display: none;
-    visibility: hidden;
-}
-
-.navbar {
-    visibility: hidden;
-}
-
-#container {
-    visibility: hidden;
-}
-
-:host {
-    // visibility: hidden;
 }
