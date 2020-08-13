@@ -11,6 +11,6 @@ export class AppComponent {
   router: string;
 
   constructor(router: Router) { 
-    router.events.subscribe((url:any) => this.router = router.url);
+    router.events.subscribe(() => this.router = router.url);
   }
 }
