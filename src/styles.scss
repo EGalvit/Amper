@@ -16,6 +16,7 @@ body {
 
 * {
     font-family: 'Open Sans Condensed', sans-serif;
+    outline: none;
 }
 
 .textInput {
@@ -38,6 +39,29 @@ body {
             color: darken($text, 15%);
         }
 }
+.buttonDesign {
+    // margin-left:20px;
+    padding: .5em 2em !important;
+    font-size: 18px;
+    border-radius: 25px;
+    border-style: none;
+    color: $text;
+    background-color: $darkGray;
+    border: solid 1px $darkGray;
+    box-shadow: 3px 3px 6px black;
+    
+        &:focus {
+          outline: none;  
+        }
+ 
+        &:hover {
+            cursor: pointer;
+            background: lighten($darkGray, 5%);
+            border: solid 1px $orange;
+            transition: .5s;
+        }
+}
+
 
 
 // .container {
