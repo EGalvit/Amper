@@ -11,14 +11,15 @@ body {
   font-size: 18px;
   padding: 0;
 }
-
+ 
 .navbar {
   background: $lightGray;
-  // overflow: hidden;
+  overflow: hidden;
   width: 100%;
 //   padding-top: -1em;
   position: fixed;
-
+  z-index: 1;
+ 
   .navButton {
     float: left;
     color: $text;
@@ -53,30 +54,4 @@ body {
     margin-top: 6px;
     vertical-align: middle;
   }
-
-  // a.logo {
-  //     margin-left: 10em;
-  //     vertical-align: middle;
-  // }
-
-  // nav {
-
-  //     ul {
-  //         list-style-type: none;
-  //         margin: .5em 0px 0px 0px;
-  //         display: flex;
-  //         padding: 0;
-
-  //         li a {
-  //             padding: 1em 2em;
-  //             margin: .5px;
-  //             background-color: $darkGray;
-  //             border: 0px .5px solid $lightGray;
-  //             &:hover {
-  //                 background: lighten($darkGray, 5%);
-  //                 transition: 500ms;
-  //             }
-  //         }
-  //     }
-  // }
 }
