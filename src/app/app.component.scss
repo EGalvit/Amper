@@ -5,69 +5,78 @@ $midGray: #414141;
 $lightGray: #525252;
 $orange: #ff803c;
 
-
 body {
-    margin: 0;
-    font-family: 'Open Sans Condensed', sans-serif;
-    font-size: 18px;
-    padding: 0;
+  margin: 0;
+  font-family: "Open Sans Condensed", sans-serif;
+  font-size: 18px;
+  padding: 0;
 }
 
-.container {
-    position: absolute;
-    width: 100%;
-    margin: 0 auto;
+.navbar {
+  background: $lightGray;
+  // overflow: hidden;
+  width: 100%;
+//   padding-top: -1em;
+  position: fixed;
+
+  .navButton {
+    float: left;
+    color: $text;
+    text-decoration: none;
+    padding: 1em 2em;
+    margin: 0px .5px .5px .5px;
+    background-color: $darkGray;
+
+    &:hover {
+      background: lighten($darkGray, 5%);
+      transition: 500ms;
+    }
+  }
+
+  .center {
+    margin: 0em 30em ;
+      
+      input {
+        width: 400px !important;
+      }
+  }
+
+  .right {
+    float: right;
+
 }
 
-.test {
-    margin-top: -.5em;
-    
-    input {
-        width: 300px;
-        margin-left: 1em;
-    }
+#settings {
+    padding: .26em 1em !important;
 }
+  img {
+    margin-top: 6px;
+    vertical-align: middle;
+  }
 
-.toast {
-    margin-left: 10em;
-    margin-top: -.5em;
-}
+  // a.logo {
+  //     margin-left: 10em;
+  //     vertical-align: middle;
+  // }
 
-header {
-    background: $lightGray;
-    padding: 1em 0;
-    height: 1.4em;
+  // nav {
 
-    a {
-        color: $text;
-        text-decoration: none;
-    }
-    a.logo {
-        font-weight: bold;
-        margin-left: 10em;
-        vertical-align: middle;
-    }
+  //     ul {
+  //         list-style-type: none;
+  //         margin: .5em 0px 0px 0px;
+  //         display: flex;
+  //         padding: 0;
 
-    nav {
-        display: inline;
-
-        ul {
-            list-style-type: none;
-            margin: 0;
-            display: flex;
-            float: left;
-            padding: 0;
-
-            li a {
-                padding: 1em 2em;
-                margin: .5px;
-                background-color: $darkGray;
-                border: 0px .5px solid $lightGray;
-                &:hover {
-                    background: lighten($darkGray, 5%);
-                    transition: 500ms;
-                }
-            }
-        }
-    }
+  //         li a {
+  //             padding: 1em 2em;
+  //             margin: .5px;
+  //             background-color: $darkGray;
+  //             border: 0px .5px solid $lightGray;
+  //             &:hover {
+  //                 background: lighten($darkGray, 5%);
+  //                 transition: 500ms;
+  //             }
+  //         }
+  //     }
+  // }
 }

@@ -1,23 +1,18 @@
 <header *ngIf="router != '/'">
-  <div class="container">
-    <nav>
-      <ul>
-        <li><a href="#" routerLink="/profil">Profil</a></li>
-        <li><a href="#" routerLink="/forside">Forside</a></li>
-        <li><a href="#" routerLink="/beskeder">Beskeder</a></li>
-      </ul>
-      <div class="test">
-          <a routerLink="/" class="logo"><img alt="Amper" src="assets/img/AmperLogo.png" height="45px"></a>
-          <input type="text" placeholder="Søg">
-      </div>  
-      <ul class="toast">
-          <li><a href="#" routerLink="/">Log ud</a></li>
-          <li><a href="#"><img alt="Indstillinger" src="assets/img/Settings.png" height="45px"></a></li>
-      </ul>
-    </nav>
+  <div class="navbar">
+    <a href="#" routerLink="/profil" class="navButton">Profil</a>
+    <a href="#" routerLink="/forside" class="navButton">Forside</a>
+    <a href="#" routerLink="/beskeder" class="navButton">Beskeder</a>
+    <div class="right">
+      <a href="#" routerLink="/" class="navButton">Log ud</a>
+      <a href="#" routerLink="/indstillinger" class="navButton" id="settings"><img alt="Indstillinger" src="assets/img/Settings.png" height="45px"/></a>
+    </div>
+    <div class="center">
+      <a routerLink="/" class="logo"><img alt="Amper" src="assets/img/AmperLogo.png" height="45px"/></a>
+      <input type="text" placeholder="Søg" class="textInput" />
+    </div>
   </div>
 </header>
-
 <div class="container">
   <router-outlet></router-outlet>
 </div>

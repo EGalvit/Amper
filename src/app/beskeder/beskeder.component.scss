@@ -1,3 +1,10 @@
+$text: #ececec;
+$black: #000000;
+$darkGray: #2a2a2a;
+$midGray: #414141;
+$lightGray: #525252;
+$orange: #ff803c;
+
 .mainbox {
     width: 50%;
     margin-right: 25%;
@@ -13,6 +20,31 @@
     margin-left: 0;
     margin-top: 0;
 }
+
+.buttonDesign {
+    margin:20px;
+    padding: .5em 1em;
+    font-size: 18px;
+    border-radius: 25px;
+    border-style: none;
+    color: $text;
+    background-color: $darkGray;
+    border: solid 1px $darkGray;
+    box-shadow: 3px 3px 6px black;
+    
+        &:focus {
+          outline: none;  
+        }
+
+        &:hover {
+            cursor: pointer;
+            background: lighten($darkGray, 5%);
+            // border: solid 1px $orange;
+            transition: .5s;
+        }
+}
+
+
 * {
     margin: 0;
     padding: 0;

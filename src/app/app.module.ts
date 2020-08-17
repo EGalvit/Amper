@@ -7,6 +7,7 @@ import { ForsideComponent } from './forside/forside.component';
 import { StartsideComponent } from './startside/startside.component';
 import { ProfilComponent } from './profil/profil.component';
 import { BeskederComponent } from './beskeder/beskeder.component';
+import { IndstillingerComponent } from './indstillinger/indstillinger.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { BeskederComponent } from './beskeder/beskeder.component';
     ForsideComponent,
     StartsideComponent,
     ProfilComponent,
-    BeskederComponent
+    BeskederComponent,
+    IndstillingerComponent
   ],
   imports: [
     BrowserModule,
