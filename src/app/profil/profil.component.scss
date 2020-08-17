@@ -1,4 +1,7 @@
 .mainbox {
+    padding: 1px;
+    border: 1px;
+    border-color: #ff803c;
     position: relative;
     width: 50%;
     margin-right: 25%;
@@ -20,6 +23,7 @@
     padding: 0;
 }
 #profilbilleder {
+    border: 1px solid #ff803c;
     height: 25%;
     width: 100%;
 }
@@ -37,4 +41,74 @@
     color: white;
     font-weight: 600;
     font-size: 32px;
+}
+button {
+    padding: .1px;
+    background-color: #414141;
+    width: 180px;
+    font-size: 20px;
+    margin-left: 3%;
+    border-radius: 5px;
+    font-weight: 100;
+    color: #ececec;
+    border: solid 1px #414141;
+    box-shadow: 3px 3px 6px black;
+}
+button:hover {
+    background-color: #525252;
+    border-color: #ff803c;
+    border: solid 1px #ff803c;
+    // box-shadow: 0 0px 30px #ff803c;
+    transition: .3s;
+}
+#profilinfo {
+    height: 14%;
+    width: 100%;
+    background-color: #2a2a2a;
+    border-color: #ff803c;
+    border: 1px solid #ff803c;
+
+}
+label {
+    color: #ececec;
+}
+#følgknap {
+    position: absolute;
+    margin-left: 70%;
+    margin-top: -4.8%;
+}
+#besked {
+    position: absolute;
+    margin-left: 4.5%;
+    margin-top: -1.8%;
+}
+#beskrivelsebox {
+    margin-left: 5%;
+    margin-top: 1%;
+    width: 50%;
+    height: 43%;
+    // background-color: pink;
+}
+#landbox {
+    margin-top: -1%;
+    margin-left: 5%;
+    float: left;
+    height: 21.5%;
+    width: 20%;
+}
+#følgerebox {
+    margin-top: -1%;
+    float: left;
+    height: 21.5%;
+    width: 20%;
+}
+#følgerbox {
+    margin-top: -1%;
+    float: left;
+    height: 21.5%;
+    width: 20%;
+}
+#infocontainer {
+    display: inline;
+    margin-left: 5px;
 }
