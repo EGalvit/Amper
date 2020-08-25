@@ -1,19 +1,118 @@
 .mainbox {
+    padding: 1px;
+    border: 1px;
+    border-color: #ff803c;
+    position: relative;
     width: 50%;
     margin-right: 25%;
     margin-left: 25%;
     height: 100vh;
     background-color: #414141;
+    overflow: auto;
 }
 .fullbox {
+    position: relative;
     padding-top: 60px;
     background-color: #2a2a2a;
     width: auto;
-    height: auto;
+    height: 92.4vh;
     margin-left: 0;
     margin-top: 0;
+    overflow: hidden;
 }
 * {
     margin: 0;
     padding: 0;
+}
+#profilnavn {
+    position: absolute;
+    top: 120px;
+    left: 15px;
+    color: white;
+    font-weight: 600;
+    font-size: 32px;
+}
+#profilnavnopslag {
+    color: white;
+}
+#opslag {
+    // position: absolute;
+    display: inline-block;
+    border-radius: 15px;
+    width: 92%;
+    // height: auto;
+    background-color: #525252;
+    margin-left: 2.5%;
+    margin-top: 2.5%;
+    padding: 1.5%;
+}
+.opslagButton {
+    position: relative;
+    display: inline;
+    background-color: #525252;
+    border: 0;
+}
+.opslagButton .lite {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 99;
+}
+.opslagButton:hover .lite {
+    display: inline;
+}
+#profilnavnopslag {
+    position: absolute;
+    padding: -3px;
+    margin-top: .7%;
+    font-size: 32px;
+    margin-left: 1%;
+    font-weight: 600;
+}
+#opslagtext {
+    height: 100%;
+    margin-left: 1%;
+    color: white;
+    text-align: left;
+    margin-bottom: 5%;
+}
+#opslagreaktioner {
+    font-size: 20px;
+    font-weight: 600;
+    display: inline;
+    color: #ff803c;
+    p {
+        padding-left: 15px;
+        margin-top: -4%;
+    }
+    
+}
+#likebox {
+    margin-left: 3%;
+    float: left;
+}
+#kommentarbox {
+    margin-left: 8%;
+    float: left;
+}
+#delbox {
+    margin-left: 8%;
+    float: left;
+}
+p {
+    float: right;
+}
+#bottombox {
+    // display: flex;
+    // float: ;
+    bottom: 0%;
+    position: absolute;
+    // height: 20%;
+}
+::-webkit-scrollbar {
+    display: none;
+}
+#opslagContainer {
+    margin-bottom: 6em;
 }
