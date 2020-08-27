@@ -7,9 +7,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProfilComponent implements OnInit {
 
+  Kage: any;
   constructor() { }
 
   ngOnInit(): void {
+    let list: number[] = [1, 2, 3];
+    console.log(list)
   }
 
 }

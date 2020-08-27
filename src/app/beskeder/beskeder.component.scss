@@ -1,0 +1,61 @@
+<<<<<<< HEAD
+=======
+$text: #ececec;
+$black: #000000;
+$darkGray: #2a2a2a;
+$midGray: #414141;
+$lightGray: #525252;
+$orange: #ff803c;
+
+.mainbox {
+    padding: 1px;
+    border: 1px;
+    border-color: #ff803c;
+    position: relative;
+    width: 50%;
+    margin-right: 25%;
+    margin-left: 25%;
+    height: 100vh;
+    background-color: #414141;
+    overflow: auto;
+}
+.fullbox {
+    position: relative;
+    padding-top: 60px;
+    background-color: #2a2a2a;
+    width: auto;
+    height: 92.4vh;
+    margin-left: 0;
+    margin-top: 0;
+    overflow: hidden;
+}
+
+.buttonDesign {
+    margin:20px;
+    padding: .5em 1em;
+    font-size: 18px;
+    border-radius: 25px;
+    border-style: none;
+    color: $text;
+    background-color: $darkGray;
+    border: solid 1px $darkGray;
+    box-shadow: 3px 3px 6px black;
+    
+        &:focus {
+          outline: none;  
+        }
+
+        &:hover {
+            cursor: pointer;
+            background: lighten($darkGray, 5%);
+            // border: solid 1px $orange;
+            transition: .5s;
+        }
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+}
+>>>>>>> efed1daa5d090c95393c5e4223d621acc85d6d0b
