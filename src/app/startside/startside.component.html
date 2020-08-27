@@ -1,26 +1,26 @@
 <body>
     <div id="obox" class="row">
             <img id="logo" alt="Amper" src="assets/img/AmperLogo - Darker.png" height="90px">
-            <label id="titteltext">AMPER</label>
+            <label id="titelText">AMPER</label>
     </div>
     <div id="logininfo" class="row">
         <div>
-            <form class="form" id="box1">
+            <form class="form" id="box1" name="LoginForm" (submit)="LoginSubmit()">
                 <label for="logintext" id="logintext">Login</label> <br>
-                <input class="textInput" type="text" id="uname" name="uname" placeholder="Username"> <br> <br>
-                <input class="textInput" type="password" id="pword" name="pword" placeholder="Password"> <br> <br>
-                <button type="button" id="login" class="buttonDesign" routerLink="/forside">Login</button>
+                <input class="textInput" type="text" id="uname" name="uname" placeholder="Username" [(ngModel)]="usernameLogin" minlength="6"> <br> <br>
+                <input class="textInput" type="password" id="pword" name="pword" placeholder="Password" [(ngModel)]="passwordLogin" minlength="6"> <br> <br>
+                <button type="submit" id="login" class="buttonDesign" >Login</button>
             </form>
             <form class="form" id="box2">
                 <label for="signup" id="signup">Sign up today</label> <br>
                 <button type="button" id="sign" class="buttonDesign" onclick="box3.style.visibility='visible'; box2.style.marginTop='0%'; box2.style.visibility='hidden'; box1.style.marginTop='0%'; box1.style.visibility='hidden';">Sign up</button>
             </form>
-            <form class="form" id="box3">
+            <form class="form" id="box3" (submit)="CreateSubmit()">
                 <label for="upsign" id="upsign">Sign up today</label> <br>
-                <input class="textInput" type="text" id="newuname" name="newuname" placeholder="Username"> <br>
-                <input class="textInput" type="password" id="newpword" name="newpword" placeholder="Password"> <br>
+                <input class="textInput" type="text" id="newuname" name="newuname" placeholder="Username" [(ngModel)]="usernameCreate"> <br>
+                <input class="textInput" type="password" id="newpword" name="newpword" placeholder="Password" [(ngModel)]="passwordCreate"> <br>
                 <input class="textInput" type="password" id="rnewpword" name="rnewpword" placeholder="Retype password"> <br>
-                <button type="button" id="submit" class="buttonDesign" onclick="box3.style.visibility='hidden'; box2.style.marginTop='25%'; box2.style.visibility='visible'; box1.style.marginTop='30%'; box1.style.visibility='visible';">Submit</button>
+                <button type="submit" id="submit" class="buttonDesign" onclick="box3.style.visibility='hidden'; box2.style.marginTop='25%'; box2.style.visibility='visible'; box1.style.marginTop='30%'; box1.style.visibility='visible';">Submit</button>
             </form>
         </div>
     </div>

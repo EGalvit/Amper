@@ -7,13 +7,16 @@ import { ProfilComponent } from './profil/profil.component';
 import { BeskederComponent } from './beskeder/beskeder.component';
 import { IndstillingerComponent } from './indstillinger/indstillinger.component';
 
+import { AuthenticationGuard } from "./helpers/authentication.guard";
+
 
 const routes: Routes = [
   { path: '', component: StartsideComponent},
-  { path: 'forside', component: ForsideComponent},
-  { path: 'profil', component: ProfilComponent},
-  { path: 'beskeder', component: BeskederComponent},
-  { path: 'indstillinger', component: IndstillingerComponent},
+  { path: 'forside', component: ForsideComponent, canActivate:[AuthenticationGuard]},
+  { path: 'profil/:id', component: ProfilComponent, canActivate:[AuthenticationGuard]},
+  { path: 'beskeder', component: BeskederComponent, canActivate:[AuthenticationGuard]},
+  { path: 'indstillinger', component: IndstillingerComponent, canActivate:[AuthenticationGuard]},
+  { path: '**', redirectTo: ''}
 ];
 
 @NgModule({
