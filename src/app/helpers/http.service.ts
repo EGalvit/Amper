@@ -23,6 +23,7 @@ export class HttpService {
       .post(`http://10.0.5.120/Services/api/User/post`, this.postData)
       .toPromise()
       .then((data) => {
+        console.log(data)
       });
   }
 

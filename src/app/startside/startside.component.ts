@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { HttpService } from "../helpers/http.service";
 import { AuthenticationService } from "../helpers/authentication.service";
 import { Router } from '@angular/router';
-import { FormsModule, Validators } from '@angular/forms';
+import { FormGroup,  FormBuilder,  Validators } from '@angular/forms';
 
 
 @Component({
@@ -13,15 +13,14 @@ import { FormsModule, Validators } from '@angular/forms';
 export class StartsideComponent implements OnInit {
   usernameCreate: string;
   passwordCreate: string;
-  usernameLogin: any;
+  usernameLogin: string;
   passwordLogin: string;
 
 
-
-  constructor(private _http: HttpService, private AuthenticationService: AuthenticationService, private router: Router) {}
+  constructor(private _http: HttpService, private AuthenticationService: AuthenticationService, private router: Router) {
+  }
 
   CreateSubmit() {
-    console.log();
     this._http.CreateUser(this.usernameCreate, this.passwordCreate);
   }
 

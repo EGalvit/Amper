@@ -7,9 +7,19 @@
         <div>
             <form class="form" id="box1" name="LoginForm" (submit)="LoginSubmit()">
                 <label for="logintext" id="logintext">Login</label> <br>
-                <input class="textInput" type="text" id="uname" name="uname" placeholder="Username" [(ngModel)]="usernameLogin" minlength="6"> <br> <br>
-                <input class="textInput" type="password" id="pword" name="pword" placeholder="Password" [(ngModel)]="passwordLogin" minlength="6"> <br> <br>
-                <button type="submit" id="login" class="buttonDesign" >Login</button>
+                <!-- [(ngModel)]="usernameLogin" -->
+                <input class="textInput" type="text" id="uname" placeholder="Username" required minlength="6" ngModel name="uname" #uname="ngModel" [(ngModel)]="usernameLogin" autocomplete="off">
+                <div *ngIf="uname.invalid && (uname.dirty || uname.touched)">
+                    <div *ngIf="uname.errors.required">
+                        Username is required
+                    </div>
+                    <div *ngIf="uname.errors.minlength">
+                        Username needs to be 6 chars long
+                    </div>
+                </div>
+                <br> <br>
+                <input class="textInput" type="password" id="pword" name="pword" placeholder="Password" [(ngModel)]="passwordLogin" autocomplete="off"> <br> <br>
+                <button type="submit" id="login" class="buttonDesign">Login</button>
             </form>
             <form class="form" id="box2">
                 <label for="signup" id="signup">Sign up today</label> <br>

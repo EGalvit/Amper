@@ -20,6 +20,13 @@ html,body {
     }
 }
 
+input.ng-dirty {
+    border-bottom: red solid 2px;
+}
+input.ng-valid {
+    border-bottom: orange solid 2px;
+}
+
 #logininfo {
     background-color: #2a2a2a;
 }
