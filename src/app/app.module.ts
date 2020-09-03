@@ -8,6 +8,7 @@ import { StartsideComponent } from './startside/startside.component';
 import { ProfilComponent } from './profil/profil.component';
 import { BeskederComponent } from './beskeder/beskeder.component';
 import { IndstillingerComponent } from './indstillinger/indstillinger.component';
+import { DiscoverComponent } from './discover/discover.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { IndstillingerComponent } from './indstillinger/indstillinger.component'
     StartsideComponent,
     ProfilComponent,
     BeskederComponent,
-    IndstillingerComponent
+    IndstillingerComponent,
+    DiscoverComponent
   ],
   imports: [
     BrowserModule,

@@ -1,6 +1,17 @@
 <body>
     <div class="fullbox">
         <div class="mainbox">
+            <div class="opslagMenu">
+                <button class="opslagHome" routerLink="/forside">Home
+                </button>
+                <button class="opslagHome" routerLink="/discover">Discover
+                </button>
+            </div>
+            <div id="createOpslag">
+                <p class="createText">Lav opslag</p>
+                <textarea class="lavOpslag" placeholder="What's happening?"></textarea>
+                <button class="sendOpslag">Send</button>
+            </div>
             <div id="opslagContainer">
                 <div id="opslag">
                     <!--*ngIf="Kage>=0"> -->

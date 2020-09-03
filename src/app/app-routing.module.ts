@@ -6,11 +6,13 @@ import { StartsideComponent } from './startside/startside.component';
 import { ProfilComponent } from './profil/profil.component';
 import { BeskederComponent } from './beskeder/beskeder.component';
 import { IndstillingerComponent } from './indstillinger/indstillinger.component';
+import { DiscoverComponent } from './discover/discover.component';
 
 
 const routes: Routes = [
   { path: '', component: StartsideComponent},
   { path: 'forside', component: ForsideComponent},
+  { path: 'discover', component: DiscoverComponent},
   { path: 'profil', component: ProfilComponent},
   { path: 'beskeder', component: BeskederComponent},
   { path: 'indstillinger', component: IndstillingerComponent},
