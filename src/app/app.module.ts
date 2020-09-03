@@ -14,6 +14,9 @@ import { IndstillingerComponent } from './indstillinger/indstillinger.component'
 import { DiscoverComponent } from './discover/discover.component';
 
 import { AuthenticationService } from "./helpers/authentication.service";
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatSliderModule } from '@angular/material/slider'
+import { MatDialogModule } from '@angular/material/dialog'
 
 @NgModule({
   declarations: [
@@ -30,7 +33,10 @@ import { AuthenticationService } from "./helpers/authentication.service";
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    BrowserAnimationsModule,
+    MatSliderModule,
+    MatDialogModule
   ],
   providers: [
     AuthenticationService
