@@ -1,10 +1,9 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 
 import { ForsideComponent } from './forside/forside.component';
 import { StartsideComponent } from './startside/startside.component';
@@ -31,14 +30,19 @@ import { MatSnackBarModule } from '@angular/material/snack-bar'
   ],
   imports: [
     FormsModule,
+    ReactiveFormsModule,
     BrowserModule,
     AppRoutingModule,
+<<<<<<< HEAD
     HttpClientModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
     MatSliderModule,
     MatDialogModule,
     MatSnackBarModule
+=======
+    HttpClientModule
+>>>>>>> a15dea9aaba2dea8a00d9d30b1dcabb922e9099d
   ],
   providers: [
     AuthenticationService
