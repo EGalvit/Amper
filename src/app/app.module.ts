@@ -13,6 +13,10 @@ import { IndstillingerComponent } from './indstillinger/indstillinger.component'
 import { DiscoverComponent } from './discover/discover.component';
 
 import { AuthenticationService } from "./helpers/authentication.service";
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatSliderModule } from '@angular/material/slider'
+import { MatDialogModule } from '@angular/material/dialog'
+import { MatSnackBarModule } from '@angular/material/snack-bar'
 
 @NgModule({
   declarations: [
@@ -29,7 +33,12 @@ import { AuthenticationService } from "./helpers/authentication.service";
     ReactiveFormsModule,
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule,
+    BrowserAnimationsModule,
+    MatSliderModule,
+    MatDialogModule,
+    MatSnackBarModule
   ],
   providers: [
     AuthenticationService
