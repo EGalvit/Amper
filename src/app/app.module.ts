@@ -34,15 +34,21 @@ import { MatSnackBarModule } from '@angular/material/snack-bar'
     BrowserModule,
     AppRoutingModule,
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> a7599cc1fddb840a81695179f6555647094ea83c
     HttpClientModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
     MatSliderModule,
     MatDialogModule,
     MatSnackBarModule
+<<<<<<< HEAD
 =======
     HttpClientModule
 >>>>>>> a15dea9aaba2dea8a00d9d30b1dcabb922e9099d
+=======
+>>>>>>> a7599cc1fddb840a81695179f6555647094ea83c
   ],
   providers: [
     AuthenticationService
