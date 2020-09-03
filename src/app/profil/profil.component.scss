@@ -40,11 +40,12 @@
     position: absolute;
     top: 120px;
     left: 15px;
-    color: white;
+    color: white;                                                                       
     font-weight: 600;
     font-size: 32px;
 }
 .button {
+    cursor: pointer;
     padding: .1px;
     background-color: #414141;
     width: 180px;
@@ -126,6 +127,7 @@ label {
     padding: 1.5%;
 }
 .opslagButton {
+    cursor: pointer;
     position: relative;
     display: inline;
     background-color: #525252;

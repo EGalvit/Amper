@@ -10,6 +10,7 @@ import { StartsideComponent } from './startside/startside.component';
 import { ProfilComponent } from './profil/profil.component';
 import { BeskederComponent } from './beskeder/beskeder.component';
 import { IndstillingerComponent } from './indstillinger/indstillinger.component';
+import { DiscoverComponent } from './discover/discover.component';
 
 import { AuthenticationService } from "./helpers/authentication.service";
 
@@ -20,7 +21,8 @@ import { AuthenticationService } from "./helpers/authentication.service";
     StartsideComponent,
     ProfilComponent,
     BeskederComponent,
-    IndstillingerComponent
+    IndstillingerComponent,
+    DiscoverComponent
   ],
   imports: [
     FormsModule,
