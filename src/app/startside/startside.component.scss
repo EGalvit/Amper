@@ -20,11 +20,16 @@ html,body {
     }
 }
 
-input.ng-dirty {
+input.ng-touched, input.ng-touched {
     border-bottom: red solid 2px;
 }
 input.ng-valid {
-    border-bottom: orange solid 2px;
+    border-bottom:  #ff803c solid 2px;
+}
+
+.errorMessage {
+    margin-bottom: -35px;
+    color: red;
 }
 
 #logininfo {

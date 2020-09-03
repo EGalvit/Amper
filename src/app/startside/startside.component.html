@@ -3,34 +3,69 @@
             <img id="logo" alt="Amper" src="assets/img/AmperLogo - Darker.png" height="90px">
             <label id="titelText">AMPER</label>
     </div>
+
     <div id="logininfo" class="row">
         <div>
-            <form class="form" id="box1" name="LoginForm" (submit)="LoginSubmit()">
+            <form class="form" id="box1" [formGroup]="loginForm" (submit)="loginSubmit()">
                 <label for="logintext" id="logintext">Login</label> <br>
-                <!-- [(ngModel)]="usernameLogin" -->
-                <input class="textInput" type="text" id="uname" placeholder="Username" required minlength="6" ngModel name="uname" #uname="ngModel" [(ngModel)]="usernameLogin" autocomplete="off">
-                <div *ngIf="uname.invalid && (uname.dirty || uname.touched)">
-                    <div *ngIf="uname.errors.required">
+                <input class="textInput" type="text" id="uname" placeholder="Username" autocomplete="off" formControlName="loginUsername">
+                <div *ngIf="f.loginUsername.invalid && (f.loginUsername.dirty || f.loginUsername.touched)">
+                    <div *ngIf="f.loginUsername.errors.required" class="errorMessage">
                         Username is required
                     </div>
-                    <div *ngIf="uname.errors.minlength">
+                    <div *ngIf="f.loginUsername.errors.minlength" class="errorMessage">
                         Username needs to be 6 chars long
                     </div>
-                </div>
-                <br> <br>
-                <input class="textInput" type="password" id="pword" name="pword" placeholder="Password" [(ngModel)]="passwordLogin" autocomplete="off"> <br> <br>
-                <button type="submit" id="login" class="buttonDesign">Login</button>
+                </div><br><br>
+
+                <input class="textInput" type="password" id="pword" placeholder="Password" autocomplete="off" formControlName="loginPassword">
+                <div *ngIf="f.loginPassword.invalid && (f.loginPassword.dirty || f.loginPassword.touched)">
+                    <div *ngIf="f.loginPassword.errors.required" class="errorMessage">
+                        Password is required
+                    </div>
+                    <div *ngIf="f.loginPassword.errors.minlength" class="errorMessage">
+                        Password needs to be 6 chars long
+                    </div>
+                </div><br><br>
+
+                <button type="submit" id="login" class="buttonDesign" [disabled]="loginForm.invalid">Login</button>
             </form>
+
             <form class="form" id="box2">
                 <label for="signup" id="signup">Sign up today</label> <br>
                 <button type="button" id="sign" class="buttonDesign" onclick="box3.style.visibility='visible'; box2.style.marginTop='0%'; box2.style.visibility='hidden'; box1.style.marginTop='0%'; box1.style.visibility='hidden';">Sign up</button>
             </form>
-            <form class="form" id="box3" (submit)="CreateSubmit()">
+
+            <form class="form" id="box3" [formGroup]="signupForm" (submit)="signupSubmit()">
                 <label for="upsign" id="upsign">Sign up today</label> <br>
-                <input class="textInput" type="text" id="newuname" name="newuname" placeholder="Username" [(ngModel)]="usernameCreate"> <br>
-                <input class="textInput" type="password" id="newpword" name="newpword" placeholder="Password" [(ngModel)]="passwordCreate"> <br>
-                <input class="textInput" type="password" id="rnewpword" name="rnewpword" placeholder="Retype password"> <br>
-                <button type="submit" id="submit" class="buttonDesign" onclick="box3.style.visibility='hidden'; box2.style.marginTop='25%'; box2.style.visibility='visible'; box1.style.marginTop='30%'; box1.style.visibility='visible';">Submit</button>
+                <input class="textInput" type="text" id="newuname" placeholder="Username" autocomplete="off" formControlName="signupUsername">
+                <div *ngIf="s.signupUsername.invalid && (s.signupUsername.dirty || s.signupUsername.touched)">
+                    <div *ngIf="s.signupUsername.errors.required" class="errorMessage">
+                        Username is required
+                    </div>
+                    <div *ngIf="s.signupUsername.errors.minlength" class="errorMessage">
+                        Username needs to be 6 chars long
+                    </div>
+                </div> <br>
+
+                <input class="textInput" type="password" id="newpword" placeholder="Password" formControlName="signupPassword">
+                <div *ngIf="s.signupPassword.invalid && (s.signupPassword.dirty || s.signupPassword.touched)">
+                    <div *ngIf="s.signupPassword.errors.required" class="errorMessage">
+                        Password is required
+                    </div>
+                    <div *ngIf="s.signupPassword.errors.minlength" class="errorMessage">
+                        Password needs to be 6 chars long
+                    </div>
+                </div> <br>
+
+                <input class="textInput" type="password" id="rnewpword" placeholder="Confirm password" formControlName="signupConFirmPassword">
+                <div *ngIf="s.signupConFirmPassword.invalid && (s.signupConFirmPassword.dirty || s.signupConFirmPassword.touched)">
+                    <div *ngIf="s.signupConFirmPassword.errors.confirmedValidator" class="errorMessage">
+                        Passwords does not match
+                    </div>
+                </div> <br>
+
+                <button type="submit" id="submit" class="buttonDesign" [disabled]="signupForm.invalid" onclick="box3.style.visibility='hidden'; box2.style.marginTop='25%'; box2.style.visibility='visible'; box1.style.marginTop='30%'; box1.style.visibility='visible';">Submit</button>
             </form>
         </div>
     </div>
