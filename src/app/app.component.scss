@@ -16,7 +16,6 @@ body {
   background: $lightGray;
   overflow: hidden;
   width: 100%;
-//   padding-top: -1em;
   position: fixed;
   z-index: 1;
  
@@ -35,10 +34,11 @@ body {
   }
 
   .center {
-    margin: 0em 30em ;
+    margin: 0 0 0 30em ;
       
       input {
-        width: 400px !important;
+        width: 333px;
+        margin: 0 0 0em 1em;
       }
   }
 
@@ -48,7 +48,7 @@ body {
 }
 
 #settings {
-    padding: .26em 1em !important;
+    padding: .26em 1em;
 }
   img {
     margin-top: 6px;

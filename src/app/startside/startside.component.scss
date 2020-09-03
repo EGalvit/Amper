@@ -1,27 +1,3 @@
-// button {
-//     // padding: .1px;
-//     // border-color:#ff803c;
-//     background-color: #414141;
-//     width: 180px;
-//     font-size: 20px;
-//     margin-left: 3%;
-//     border-radius: 5px;
-//     font-weight: 100;
-//     color: #ececec;
-
-//     &:hover {
-//         background-color: #ff803c;
-//         border-color: #ff803c91;
-//         box-shadow: 0 0px 10px #ff803c;
-//         transition: .3s;
-//     }
-// }
-
-* {
-    padding: 0;
-    margin: 0;
-}
-
 html,body {
     height: 100vh;
     display: flex;
@@ -36,11 +12,19 @@ html,body {
 .row {
     width:100%;
     height:100%;
+
+    div {
+        width:100%;
+        height:100%;
+        // float:left;
+    }
 }
-.row div {
-    width:100%;
-    height:100%;
-    float:left;
+
+input.ng-dirty {
+    border-bottom: red solid 2px;
+}
+input.ng-valid {
+    border-bottom: orange solid 2px;
 }
 
 #logininfo {
@@ -98,7 +82,7 @@ html,body {
     margin-top: 43%;
     margin-left: 25%;
 }
-#titteltext {
+#titelText {
     color:#6e533b;
     font-weight: 600;
     font-size: 125px;
