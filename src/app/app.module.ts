@@ -17,6 +17,7 @@ import { AuthenticationService } from "./helpers/authentication.service";
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSliderModule } from '@angular/material/slider'
 import { MatDialogModule } from '@angular/material/dialog'
+import { MatSnackBarModule } from '@angular/material/snack-bar'
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { MatDialogModule } from '@angular/material/dialog'
     ReactiveFormsModule,
     BrowserAnimationsModule,
     MatSliderModule,
-    MatDialogModule
+    MatDialogModule,
+    MatSnackBarModule
   ],
   providers: [
     AuthenticationService
