@@ -2,27 +2,40 @@ import { Component, OnInit } from '@angular/core';
 import { HttpService } from "../helpers/http.service";
 import { AuthenticationService } from "../helpers/authentication.service";
 import { Router } from '@angular/router';
-import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms';
-import { ConfirmedValidator } from "../helpers/password.validator";
+import { FormBuilder, FormGroup, Validators, FormControl, FormGroupDirective, NgForm } from '@angular/forms';
+import { MatSnackBar, MatSnackBarConfig } from "@angular/material/snack-bar";
+import { ErrorStateMatcher } from '@angular/material/core';
 
+export class PasswordCheck implements ErrorStateMatcher {
+  isErrorState(control: FormControl | null, form: FormGroupDirective | NgForm | null): boolean {
+    const invalidCtrl = !!(control && control.invalid && control.parent.dirty);
+    const invalidParent = !!(control && control.parent && control.parent.invalid && control.parent.dirty);
+
+    return (invalidCtrl || invalidParent);
+  }
+}
 
 @Component({
   selector: 'app-startside',
   templateUrl: './startside.component.html',
   styleUrls: ['./startside.component.scss'],
 })
-export class StartsideComponent implements OnInit {
 
+export class StartsideComponent implements OnInit {
+  
+  matcher = new PasswordCheck();
+    
   loginForm: FormGroup;
   loginUsername = new FormControl(null, [Validators.required, Validators.minLength(6)]);
   loginPassword = new FormControl(null, [Validators.required, Validators.minLength(6)]);
 
   signupForm: FormGroup
   signupUsername = new FormControl(null, [Validators.required, Validators.minLength(6)]);
-  signupPassword = new FormControl(null, [Validators.required, Validators.minLength(6)]);
-  signupConFirmPassword = new FormControl(null, [Validators.required]);
+  signupPassword = new FormControl('', [Validators.required, Validators.minLength(6)]);
+  signupConFirmPassword = new FormControl('', [Validators.required]);
   
-  constructor(private _http: HttpService, private AuthenticationService: AuthenticationService, private router: Router, private fb: FormBuilder) {
+  constructor(private _http: HttpService, private AuthenticationService: AuthenticationService, private router: Router, private fb: FormBuilder, private snackBar: MatSnackBar) {
+
     this.loginForm = this.fb.group({
       loginUsername: this.loginUsername,
       loginPassword: this.loginPassword
@@ -32,9 +45,8 @@ export class StartsideComponent implements OnInit {
       signupUsername: this.signupUsername,
       signupPassword: this.signupPassword,
       signupConFirmPassword: this.signupConFirmPassword,
-
     },
-    { validator: ConfirmedValidator('signupPassword', 'signupConFirmPassword') });
+    { validator: this.checkPasswords });
   }
   
   loginSubmit() {
@@ -45,7 +57,18 @@ export class StartsideComponent implements OnInit {
   signupSubmit() {
     const formValue = this.signupForm.value;
     this._http.CreateUser(formValue.signupUsername, formValue.signupPassword);
+    let config = new MatSnackBarConfig();
+    config.panelClass = ['snackTest'];
+    config.duration = 5000;
+    this.snackBar.open('Bruger oprettet', 'Luk', config);
   }
+
+  checkPasswords(fg: FormGroup) { 
+  let pass = fg.controls.signupPassword.value;
+  let confirmPass = fg.controls.signupConFirmPassword.value;
+
+  return pass === confirmPass ? null : { notSame: true }
+  } 
   
   get f(){
     return this.loginForm.controls;

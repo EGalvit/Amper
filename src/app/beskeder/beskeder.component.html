@@ -5,6 +5,30 @@
             <p></p>
             <button class="buttonDesign">Press me!</button>
             <mat-slider class="slider" min="1" max="100" step="1" value="1"></mat-slider>
+            <br>
+            <mat-form-field>
+                <mat-label>whats on your mind</mat-label>
+                <textarea matInput #post maxlength="124" placeholder="whats on your mind"></textarea>
+                <mat-hint align="end">{{ post.value.length }} / 124</mat-hint>
+            </mat-form-field>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+
+            <form>
+                <mat-form-field color='accent'>
+                    <mat-label>Username</mat-label>
+                    <input matInput maxlength="124" placeholder="Your username" autocomplete="off">
+                </mat-form-field>
+                <mat-form-field color='accent'>
+                    <mat-label>Password</mat-label>
+                    <input type="password" matInput maxlength="124" placeholder="Your password" autocomplete="off">
+                </mat-form-field>
+                <br>
+                <button type="submit" mat-raised-button color="primary">Login</button>
+            </form>
         </div>
     </div>
 </body>

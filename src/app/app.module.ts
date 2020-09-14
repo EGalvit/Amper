@@ -4,6 +4,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { AngularMaterialModule } from './angular-material.module';
 
 import { ForsideComponent } from './forside/forside.component';
 import { StartsideComponent } from './startside/startside.component';
@@ -14,9 +15,6 @@ import { DiscoverComponent } from './discover/discover.component';
 
 import { AuthenticationService } from "./helpers/authentication.service";
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatSliderModule } from '@angular/material/slider'
-import { MatDialogModule } from '@angular/material/dialog'
-import { MatSnackBarModule } from '@angular/material/snack-bar'
 
 @NgModule({
   declarations: [
@@ -36,9 +34,7 @@ import { MatSnackBarModule } from '@angular/material/snack-bar'
     HttpClientModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
-    MatSliderModule,
-    MatDialogModule,
-    MatSnackBarModule
+    AngularMaterialModule
   ],
   providers: [
     AuthenticationService
