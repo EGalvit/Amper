@@ -1,6 +1,6 @@
 <header *ngIf="router != '/'">
   <div class="navbar">
-    <a routerLink='/profil/{{ userid }}' class="navButton">Profil</a>
+    <a routerLink='/profil/{{ app.getUserID }}' class="navButton">Profil</a>
     <a routerLink="/forside" class="navButton">Forside</a>
     <a routerLink="/beskeder" class="navButton">Beskeder</a>
     <div class="right">
