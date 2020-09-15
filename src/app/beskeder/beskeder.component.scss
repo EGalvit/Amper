@@ -56,3 +56,6 @@ $orange: #ff803c;
     margin: 0;
     padding: 0;
 }
+.mat-radio-button ~ .mat-radio-button {
+    margin-left: 16px;
+  }

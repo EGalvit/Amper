@@ -8,8 +8,11 @@ import {MatSnackBar} from '@angular/material/snack-bar'
 })
 export class BeskederComponent implements OnInit {
 
-  constructor() { }
-
+  constructor(private _snackBar: MatSnackBar) {}
+  
+  openSnackBar() {
+    this._snackBar.open('You pressed me', 'Close', {duration: 3000});
+  }
   ngOnInit(): void {
   }
 

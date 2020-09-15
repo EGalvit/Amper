@@ -1,4 +1,4 @@
-<header *ngIf="router != '/'">
+<!-- <header *ngIf="router != '/'">
   <div class="navbar">
     <a routerLink='/profil/{{ userid }}' class="navButton">Profil</a>
     <a routerLink="/forside" class="navButton">Forside</a>
@@ -13,4 +13,32 @@
     </div>
   </div>
 </header>
-<router-outlet></router-outlet>
+<router-outlet (click)="dismissSidebar()"></router-outlet> -->
+
+
+<mat-toolbar class="navBar" *ngIf="router != '/'" scroll="no">
+  <button type="button" class="navBar" mat-icon-button (click)="drawer.toggle()">
+    <mat-icon>menu</mat-icon>
+  </button>
+  <div class="logo">
+      <a routerLink="/"><img alt="Amper" src="assets/img/AmperLogo.png" height="45px" class="søgeFeltLogo" /></a>
+  </div>
+  <div class="center">
+    <mat-form-field class="søgeFelt">
+      <!-- <mat-label>Søg</mat-label> -->
+      <input matInput placeholder="Søg" type="text"/>
+    </mat-form-field>
+  </div>
+</mat-toolbar>
+
+<mat-drawer-container (click)="dismissSidebar()" class="sideNavContainer" hasBackdrop="false" scroll="no" autosize>
+  <mat-drawer #drawer class="sideNav" mode="over" [openedSubject]="openedSubject">
+    <a routerLink='/profil/{{ userid }}' class="navButton">Profil</a> <br>
+    <a routerLink="/forside" class="navButton">Forside</a> <br>
+    <a routerLink="/beskeder" class="navButton">Beskeder</a> <br>
+    <a routerLink="/indstillinger" class="navButton" id="settings">Indstillinger</a> <br>
+    <a (click)="ClearStorage()" routerLink="/" class="navButton">Log ud</a> <br>
+
+  </mat-drawer>
+  <router-outlet (click)="dismissSidebar()"></router-outlet>
+</mat-drawer-container>

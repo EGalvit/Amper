@@ -5,53 +5,101 @@ $midGray: #414141;
 $lightGray: #525252;
 $orange: #ff803c;
 
-body {
-  margin: 0;
-  font-family: "Open Sans Condensed", sans-serif;
-  font-size: 18px;
-  padding: 0;
-}
+// body {
+//   margin: 0;
+//   font-family: "Open Sans Condensed", sans-serif;
+//   font-size: 18px;
+//   padding: 0;
+// }
  
-.navbar {
-  background: $lightGray;
-  overflow: hidden;
-  width: 100%;
-  position: fixed;
-  z-index: 1;
+// .navbar {
+//   background: $lightGray;
+//   overflow: hidden;
+//   width: 100%;
+//   position: fixed;
+//   z-index: -1;
  
-  .navButton {
-    float: left;
-    color: $text;
-    text-decoration: none;
-    padding: 1em 2em;
-    margin: 0px .5px .5px .5px;
-    background-color: $darkGray;
+//   .navButton {
+//     float: left;
+//     color: $text;
+//     text-decoration: none;
+//     padding: 1em 2em;
+//     margin: 0px .5px .5px .5px;
+//     background-color: $darkGray;
 
-    &:hover {
-      background: lighten($darkGray, 5%);
-      transition: 500ms;
-    }
-  }
+//     &:hover {
+//       background: lighten($darkGray, 5%);
+//       transition: 500ms;
+//     }
+//   }
 
-  .center {
-    margin: 0 0 0 30em ;
+//   .center {
+//     margin: 0 0 0 30em ;
       
-      input {
-        width: 333px;
-        margin: 0 0 0em 1em;
-      }
-  }
+//       input {
+//         width: 333px;
+//         margin: 0 0 0em 1em;
+//       }
+//   }
 
-  .right {
-    float: right;
+//   .right {
+//     float: right;
 
+// }
+
+// #settings {
+//     padding: .26em 1em;
+// }
+//   img {
+//     margin-top: 6px;
+//     vertical-align: middle;
+//   }
+// }
+.sideNavContainer {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    // border: 1px solid rgba(0, 255, 0, 0.5);
+    overflow: hidden;
 }
 
-#settings {
-    padding: .26em 1em;
+.sideNav {
+    padding: 6%;
+    z-index: 2;
+    background-color: #414141;
+    
+    a {
+        color: #ececec;
+    }
 }
-  img {
-    margin-top: 6px;
-    vertical-align: middle;
-  }
+
+::ng-deep .mat-sidenav-backdrop.mat-sidenav-shown{
+    background-color: transparent !important;
 }
+
+.navBar {
+    position: fixed;
+    z-index: 3;
+    background-color: #525252;
+}
+.logo {
+    margin-left: 25vw;
+}
+.søgeFelt {
+    // width: 220%;
+    width: 25vw;
+    // margin-top: 10%;
+    margin-left: 8vw;
+    // margin-bottom: 5%;
+    &:focus {
+        margin-top: 10%;
+    }
+    // &:active {
+    //     // margin-top: 10%;
+    // }
+}
+.søgeFeltLogo {
+    margin-top: 13%;
+}
+
+

@@ -6,18 +6,17 @@
     width: 50%;
     margin-right: 25%;
     margin-left: 25%;
-    height: 100vh;
+    height: 100%;
     background-color: #414141;
     overflow: auto;
 }
 .fullbox {
-    position: relative;
-    padding-top: 60px;
+    position: auto;
+    // padding-top: 60px;
     background-color: #2a2a2a;
     width: auto;
-    height: 92.4vh;
+    height: 100%;
     margin-left: 0;
-    margin-top: 0;
     overflow: hidden;
 }
 * {
@@ -105,6 +104,9 @@
 .opslagButton:hover .lite {
     display: inline;
 }
+#liteKommentar {
+    margin-top: 1px;
+}
 #profilnavnopslag {
     position: absolute;
     padding: -3px;
@@ -157,7 +159,7 @@ p {
     display: none;
 }
 #opslagContainer {
-    margin-bottom: 6em;
+    margin-bottom: 1em;
 }
 .sendOpslag {
     padding: .1px;
@@ -181,6 +183,7 @@ p {
 }
 .opslagMenu {
     width: 100%;
+    padding-top: 64px;
     height: 5%;
     // background-color: limegreen;
 }
