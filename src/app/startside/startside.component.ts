@@ -5,6 +5,7 @@ import { Router } from '@angular/router';
 import { FormBuilder, FormGroup, Validators, FormControl, FormGroupDirective, NgForm } from '@angular/forms';
 import { MatSnackBar, MatSnackBarConfig } from "@angular/material/snack-bar";
 import { ErrorStateMatcher } from '@angular/material/core';
+import { User } from "../models/user";
 
 export class PasswordCheck implements ErrorStateMatcher {
   isErrorState(control: FormControl | null, form: FormGroupDirective | NgForm | null): boolean {
@@ -34,6 +35,7 @@ export class StartsideComponent implements OnInit {
   signupPassword = new FormControl('', [Validators.required, Validators.minLength(6)]);
   signupConFirmPassword = new FormControl('', [Validators.required]);
   
+  user: User;
   constructor(private _http: HttpService, private AuthenticationService: AuthenticationService, private router: Router, private fb: FormBuilder, private snackBar: MatSnackBar) {
 
     this.loginForm = this.fb.group({
@@ -51,7 +53,13 @@ export class StartsideComponent implements OnInit {
   
   loginSubmit() {
     const formValue = this.loginForm.value;
-    this._http.Login(formValue.loginUsername, formValue.loginPassword);
+    this._http.Login(formValue.loginUsername, formValue.loginPassword)
+    .subscribe((data) => {
+      this.user = Object.assign((new User), data)
+      localStorage.setItem('UserID',this.user.UserID.toString());
+      localStorage.setItem('User', JSON.stringify(this.user));
+      this.router.navigate(['/forside']);
+    });;
   }
 
   signupSubmit() {
