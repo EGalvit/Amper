@@ -4,6 +4,7 @@ import { AuthenticationService } from "../helpers/authentication.service";
 import { Router } from '@angular/router';
 import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms';
 import { ConfirmedValidator } from "../helpers/password.validator";
+import { User } from "../models/user";
 
 
 @Component({
@@ -22,6 +23,7 @@ export class StartsideComponent implements OnInit {
   signupPassword = new FormControl(null, [Validators.required, Validators.minLength(6)]);
   signupConFirmPassword = new FormControl(null, [Validators.required]);
   
+  user: User;
   constructor(private _http: HttpService, private AuthenticationService: AuthenticationService, private router: Router, private fb: FormBuilder) {
     this.loginForm = this.fb.group({
       loginUsername: this.loginUsername,
@@ -39,7 +41,13 @@ export class StartsideComponent implements OnInit {
   
   loginSubmit() {
     const formValue = this.loginForm.value;
-    this._http.Login(formValue.loginUsername, formValue.loginPassword);
+    this._http.Login(formValue.loginUsername, formValue.loginPassword)
+    .subscribe((data) => {
+      this.user = Object.assign((new User), data)
+      localStorage.setItem('UserID',this.user.UserID.toString());
+      localStorage.setItem('User', JSON.stringify(this.user));
+      this.router.navigate(['/forside']);
+    });;
   }
 
   signupSubmit() {
