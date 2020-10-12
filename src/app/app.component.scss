@@ -98,8 +98,58 @@ $orange: #ff803c;
     //     // margin-top: 10%;
     // }
 }
+<<<<<<< Updated upstream
 .søgeFeltLogo {
     margin-top: 13%;
 }
 
+=======
+
+.sideNavContainer {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  // border: 1px solid rgba(0, 255, 0, 0.5);
+  overflow: hidden;
+}
+
+.sideNav {
+  padding: 6%;
+  z-index: 2;
+  background-color: #414141;
+  
+  a {
+      color: #ececec;
+  }
+}
+
+::ng-deep .mat-sidenav-backdrop.mat-sidenav-shown{
+  background-color: transparent !important;
+}
+
+.navBar {
+  position: fixed;
+  z-index: 3;
+  background-color: #525252;
+}
+.logo {
+  margin-left: 25vw;
+}
+.søgeFelt {
+  // width: 220%;
+  width: 25vw;
+  // margin-top: 10%;
+  margin-left: 8vw;
+  // margin-bottom: 5%;
+  &:focus {
+      margin-top: 10%;
+  }
+  // &:active {
+  //     // margin-top: 10%;
+  // }
+}
+.søgeFeltLogo {
+  margin-top: 13%;
+}
+>>>>>>> Stashed changes
 
