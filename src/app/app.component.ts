@@ -12,11 +12,11 @@ import { Subject } from 'rxjs';
 export class AppComponent implements OnInit{
   title = 'Amper';
   router: any;
-  userid = localStorage.getItem('UserID');
+  userid: any;
   openedSubject = new Subject<boolean>();
 
-  constructor(router: Router) {
-    router.events.subscribe(() => (this.router = router.url));
+  constructor(private _router: Router) {
+    _router.events.subscribe(() => (this.router = _router.url));
   }
 
   ngOnInit(): void {
@@ -30,5 +30,10 @@ export class AppComponent implements OnInit{
 
   dismissSidebar() {
     this.openedSubject.next(false);
+  }
+
+  Profil() {
+    this.userid = localStorage.getItem("UserID");
+    this._router.navigateByUrl(`/profil/${this.userid}`);
   }
 }

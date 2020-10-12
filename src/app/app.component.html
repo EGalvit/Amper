@@ -34,7 +34,7 @@
 <mat-drawer-container class="sideNavContainer" hasBackdrop="false" scroll="no" autosize>
   <mat-drawer #drawer class="sideNav" mode="over" > 
     <!-- [openedSubject]="openedSubject" -->
-    <a routerLink='/profil/{{ userid }}' class="navButton">Profil</a> <br>
+    <a (click)="Profil()"  class="navButton">Profil</a> <br>
     <a routerLink="/forside" class="navButton">Forside</a> <br>
     <a routerLink="/beskeder" class="navButton">Beskeder</a> <br>
     <a routerLink="/indstillinger" class="navButton" id="settings">Indstillinger</a> <br>
