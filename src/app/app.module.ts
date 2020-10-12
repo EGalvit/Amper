@@ -12,11 +12,24 @@ import { ProfilComponent } from './profil/profil.component';
 import { BeskederComponent } from './beskeder/beskeder.component';
 import { IndstillingerComponent } from './indstillinger/indstillinger.component';
 import { DiscoverComponent } from './discover/discover.component';
+import { TestingComponent } from './testing/testing.component';
 
 import { AuthenticationService } from "./helpers/authentication.service";
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
+
+
 @NgModule({
+  declarations: [
+    AppComponent,
+    ForsideComponent,
+    StartsideComponent,
+    ProfilComponent,
+    BeskederComponent,
+    IndstillingerComponent,
+    DiscoverComponent,
+    TestingComponent
+  ],
   imports: [
     FormsModule,
     ReactiveFormsModule,
@@ -27,10 +40,14 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     BrowserAnimationsModule,
     AngularMaterialModule,
   ],
+  exports: [
+    AngularMaterialModule
+  ],
   providers: [
     AuthenticationService
   ],
   bootstrap: [AppComponent],
-  schemas: [ NO_ERRORS_SCHEMA ]
+  schemas: [ NO_ERRORS_SCHEMA ],
+  
 })
 export class AppModule { };
