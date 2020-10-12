@@ -8,80 +8,40 @@
                 </button>
             </div>
             <div id="opslagContainer">
-                <div id="opslag">
-                    <!--*ngIf="Kage>=0"> -->
-                    <button id="gotoprofile" routerLink="/profil" class="opslagButton"><img id="profilbilled"
-                            alt="Profilbilled" src="assets/img/AmperLogo - Darker.png" height="60px"></button>
-                    <label id="profilnavnopslag">Amper</label> <br>
-                    <div id="opslagindhold">
-                        <p id="opslagtext">Ubisoft goes Steamworks bye bye, always on DRM.
-                            Ubisoft goes Steamworks bye bye, always on DRM.
-                            Ubisoft goes Steamworks bye bye, always on DRM.
-                            Ubisoft goes Steamworks bye bye, always on DRM.
-                            Ubisoft goes Steamworks bye bye, always on DRM.
-                            Ubisoft goes Steamworks bye bye, always on DRM.
-                            Ubisoft goes Steamworks bye bye, always on DRM.
-                            Ubisoft goes Steamworks bye bye, always on DRM.
-                            Ubisoft goes Steamworks bye bye, always on DRM.
-                        </p> <br>
-                    </div>
-                    <div id="opslagreaktioner">
-                        <div id="likebox">
-                            <button id="likeopslag" class="opslagButton"><img id="like" alt="Like"
-                                    src="assets/img/Like.png" height="20px"><img class="lite" alt="LikeLite"
-                                    src="assets/img/Like-Lite.png" height="20px"></button>
-                            <p>127</p>
+                <ul *ngIf="posts">
+                    <li *ngFor="let post of posts; let i = index">
+                        <div id="opslag" >
+                            <button onclick="" id="gotoprofile" routerLink="/profil" class="opslagButton"><img id="profilbilled"
+                                    alt="Profilbilled" src="assets/img/AmperLogo - Darker.png" height="60px"
+                                    ></button>
+                            <label id="profilnavnopslag">{{post.postername}}</label> <br>
+                            <div id="opslagindhold">
+                                <p id="opslagtext{{i}}">{{post.post}}</p> <br>
+                            </div>
+                            <div id="opslagreaktioner">
+                                <div id="likebox">
+                                    <button id="likeopslag" class="opslagButton"><img id="like" alt="Like"
+                                            src="assets/img/Like.png" height="20px"><img class="lite" alt="LikeLite"
+                                            src="assets/img/Like-Lite.png" height="20px" (click)="Like(post.PostID, i)"></button>
+                                    <p id="likeCount{{i}}">{{post.likes}}</p>
+                                </div>
+                                <div id="kommentarbox">
+                                    <button id="kommenteropslag" class="opslagButton"><img id="kommentar"
+                                            alt="Kommentar" src="assets/img/Kommentar.png" height="18px"><img
+                                            class="lite" alt="KommentarLite" src="assets/img/Kommentar-Lite.png"
+                                            height="18px"></button>
+                                    <p id="commentCount{{i}}">{{post.comments}}</p>
+                                </div>
+                                <div id="delbox">
+                                    <button id="delopslag" class="opslagButton"><img id="del" alt="Del"
+                                            src="assets/img/Del.png" height="20px"><img class="lite" alt="KommentarLite"
+                                            src="assets/img/Del-Lite.png" height="20px" (click)="Amp(post.PostID, i)"></button>
+                                    <p id="ampCount{{i}}">{{post.amps}}</p>
+                                </div>
+                            </div>
                         </div>
-                        <div id="kommentarbox">
-                            <button id="kommenteropslag" class="opslagButton"><img id="kommentar" alt="Kommentar"
-                                    src="assets/img/Kommentar.png" height="18px"><img class="lite" alt="KommentarLite"
-                                    src="assets/img/Kommentar-Lite.png" height="18px"></button>
-                            <p>14</p>
-                        </div>
-                        <div id="delbox">
-                            <button id="delopslag" class="opslagButton"><img id="del" alt="Del" src="assets/img/Del.png"
-                                    height="20px"><img class="lite" alt="KommentarLite" src="assets/img/Del-Lite.png"
-                                    height="20px"></button>
-                            <p>2</p>
-                        </div>
-                    </div>
-                </div>
-                <div id="opslag">
-                    <!--*ngIf="Kage>=0"> -->
-                    <button id="gotoprofile" routerLink="/profil" class="opslagButton"><img id="profilbilled"
-                            alt="Profilbilled" src="assets/img/AmperLogo - Darker.png" height="60px"></button>
-                    <label id="profilnavnopslag">Amper</label> <br>
-                    <div id="opslagindhold">
-                        <p id="opslagtext">Ubisoft goes Steamworks bye bye, always on DRM.
-                            Ubisoft goes Steamworks bye bye, always on DRM.
-                            Ubisoft goes Steamworks bye bye, always on DRM.
-                            Ubisoft goes Steamworks bye bye, always on DRM.
-                            Ubisoft goes Steamworks bye bye, always on DRM.
-                            Ubisoft goes Steamworks bye bye, always on DRM.
-                            Ubisoft goes Steamworks bye bye, always on DRM.
-                        </p> <br>
-                    </div>
-                    <div id="opslagreaktioner">
-                        <div id="likebox">
-                            <button id="likeopslag" class="opslagButton"><img id="like" alt="Like"
-                                    src="assets/img/Like.png" height="20px"><img class="lite" alt="LikeLite"
-                                    src="assets/img/Like-Lite.png" height="20px"></button>
-                            <p>127</p>
-                        </div>
-                        <div id="kommentarbox">
-                            <button id="kommenteropslag" class="opslagButton"><img id="kommentar" alt="Kommentar"
-                                    src="assets/img/Kommentar.png" height="18px"><img class="lite" alt="KommentarLite"
-                                    src="assets/img/Kommentar-Lite.png" height="18px"></button>
-                            <p>14</p>
-                        </div>
-                        <div id="delbox">
-                            <button id="delopslag" class="opslagButton"><img id="del" alt="Del" src="assets/img/Del.png"
-                                    height="20px"><img class="lite" alt="KommentarLite" src="assets/img/Del-Lite.png"
-                                    height="20px"></button>
-                            <p>2</p>
-                        </div>
-                    </div>
-                </div>
+                    </li>
+                </ul>                
             </div>
         </div>
     </div>

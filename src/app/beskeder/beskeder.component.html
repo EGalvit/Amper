@@ -3,26 +3,32 @@
         <div class="mainbox">
             <input type="text" id="name" placeholder="placeholder" class="textInput">
             <p></p>
-            <button mat-stroked-button (click)="openSnackBar()" class="buttonDesign">Press me!</button> <br>
-            <mat-slider class="slider" min="1" max="100" step="1" value="1"></mat-slider> <br>
-            <mat-slide-toggle>Slide me!</mat-slide-toggle> <br>
-            <mat-form-field class="Field">
-                <mat-label>Nyt brugernavn</mat-label>
-                <input matInput type="text">
-            </mat-form-field> <br>
+            <button class="buttonDesign">Press me!</button>
+            <mat-slider class="slider" min="1" max="100" step="1" value="1"></mat-slider>
+            <br>
             <mat-form-field>
-                <mat-label>Choose a date</mat-label>
-                <!-- #docregion toggle -->
-                <input matInput [matDatepicker]="picker">
-                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-                <mat-datepicker #picker></mat-datepicker>
+                <mat-label>whats on your mind</mat-label>
+                <textarea matInput #post maxlength="124" placeholder="whats on your mind"></textarea>
+                <mat-hint align="end">{{ post.value.length }} / 124</mat-hint>
             </mat-form-field>
-            <mat-progress-bar mode="indeterminate"></mat-progress-bar> <br>
-            <mat-spinner></mat-spinner>
-            <mat-radio-group aria-label="Select an option">
-                <mat-radio-button value="1">1</mat-radio-button>
-                <mat-radio-button value="2">2</mat-radio-button>
-            </mat-radio-group>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+
+            <form>
+                <mat-form-field color='accent'>
+                    <mat-label>Username</mat-label>
+                    <input matInput maxlength="124" placeholder="Your username" autocomplete="off">
+                </mat-form-field>
+                <mat-form-field color='accent'>
+                    <mat-label>Password</mat-label>
+                    <input type="password" matInput maxlength="124" placeholder="Your password" autocomplete="off">
+                </mat-form-field>
+                <br>
+                <button type="submit" mat-raised-button color="primary">Login</button>
+            </form>
         </div>
     </div>
 </body>

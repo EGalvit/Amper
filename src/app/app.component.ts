@@ -1,4 +1,5 @@
 import { Component, ViewEncapsulation } from '@angular/core';
+import { OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Subject } from 'rxjs';
 
@@ -8,7 +9,7 @@ import { Subject } from 'rxjs';
   styleUrls: ['./app.component.scss'],
   encapsulation: ViewEncapsulation.None,
 })
-export class AppComponent {
+export class AppComponent implements OnInit{
   title = 'Amper';
   router: any;
   userid = localStorage.getItem('UserID');
@@ -16,6 +17,11 @@ export class AppComponent {
 
   constructor(router: Router) {
     router.events.subscribe(() => (this.router = router.url));
+  }
+
+  ngOnInit(): void {
+    this.userid = localStorage.getItem('UserID');
+    console.log(this.userid);
   }
 
   ClearStorage() {

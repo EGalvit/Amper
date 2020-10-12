@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, HostListener } from '@angular/core';
 
 @Component({
   selector: 'app-profil',
@@ -7,12 +7,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProfilComponent implements OnInit {
 
-  Kage: any;
   constructor() { }
 
   ngOnInit(): void {
-    let list: number[] = [1, 2, 3];
-    console.log(list)
+
+  }
+
+  @HostListener('scroll', ['$event'])
+  onScroll(event: any) {
+    if (event.target.offsetHeight + event.target.scrollTop >= event.target.scrollHeight) {
+      console.log("End");
+    }
   }
 
 }
