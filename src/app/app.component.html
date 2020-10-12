@@ -13,12 +13,8 @@
     </div>
   </div>
 </header>
-<<<<<<< Updated upstream
 <router-outlet (click)="dismissSidebar()"></router-outlet> -->
 
-=======
-<router-outlet></router-outlet> -->
->>>>>>> Stashed changes
 
 <mat-toolbar class="navBar" *ngIf="router != '/'" scroll="no">
   <button type="button" class="navBar" mat-icon-button (click)="drawer.toggle()">
@@ -34,22 +30,15 @@
     </mat-form-field>
   </div>
 </mat-toolbar>
-<<<<<<< Updated upstream
-
-<mat-drawer-container (click)="dismissSidebar()" class="sideNavContainer" hasBackdrop="false" scroll="no" autosize>
-  <mat-drawer #drawer class="sideNav" mode="over" [openedSubject]="openedSubject">
-=======
  
 <mat-drawer-container class="sideNavContainer" hasBackdrop="false" scroll="no" autosize>
   <mat-drawer #drawer class="sideNav" mode="over" > 
     <!-- [openedSubject]="openedSubject" -->
->>>>>>> Stashed changes
     <a routerLink='/profil/{{ userid }}' class="navButton">Profil</a> <br>
     <a routerLink="/forside" class="navButton">Forside</a> <br>
     <a routerLink="/beskeder" class="navButton">Beskeder</a> <br>
     <a routerLink="/indstillinger" class="navButton" id="settings">Indstillinger</a> <br>
     <a (click)="ClearStorage()" routerLink="/" class="navButton">Log ud</a> <br>
-<<<<<<< Updated upstream
 
   </mat-drawer>
   <router-outlet (click)="dismissSidebar()"></router-outlet>
