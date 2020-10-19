@@ -22,7 +22,7 @@ export class HttpService {
       password: passwordInput
     };
     this.http
-      .post(`http://10.0.5.120/Services/api/User/post`, this.postData)
+      .post(`https://localhost:44358/api/User/post`, this.postData)
       .toPromise()
       .then((data) => {});
   }

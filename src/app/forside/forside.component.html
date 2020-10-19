@@ -8,10 +8,19 @@
                 </button>
             </div>
             <div id="createOpslag">
-                <p class="createText">Lav opslag</p>
+                <!-- <p class="createText">Lav opslag</p>
                 <textarea class="lavOpslag" placeholder="What's happening?" id="postText"></textarea>
-                <button class="sendOpslag" (click)="CreatePost()">Send</button>
+                <button class="sendOpslag" (click)="CreatePost()">Send</button> -->
+
+                <form [formGroup]="opslagForm" (submit)="CreatePost()">
+                    <mat-form-field>
+                        <mat-label>Lav opslag</mat-label>
+                        <input matInput formControlName="opslagText">
+                    </mat-form-field>
+                    <button type="submit" class="sendOpslag">Send</button>
+                </form>
             </div>
+
             <div id="opslagContainer">
                 <ul *ngIf="posts">
                     <li *ngFor="let post of posts">

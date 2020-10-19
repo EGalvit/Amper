@@ -59,6 +59,8 @@ export class StartsideComponent implements OnInit {
       localStorage.setItem('UserID',this.user.UserID.toString());
       localStorage.setItem('User', JSON.stringify(this.user));
       this.router.navigate(['/forside']);
+    }, (error) => {
+        console.log(error);
     });;
   }
 

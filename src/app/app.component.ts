@@ -11,16 +11,20 @@ export class AppComponent implements OnInit{
   router: any;
   userid: any;
 
-  constructor(router: Router) {
-    router.events.subscribe(() => (this.router = router.url));
+  constructor(private _router: Router) {
+    _router.events.subscribe(() => (this.router = _router.url));
   }
 
   ngOnInit(): void {
-    this.userid = localStorage.getItem('UserID');
-    console.log(this.userid);
+    // console.log(this.userid);
   }
 
   ClearStorage() {
     localStorage.clear();
+  }
+
+  Profil() {
+    this.userid = localStorage.getItem('UserID');
+    this._router.navigateByUrl(`/profil/${this.userid}`);
   }
 }

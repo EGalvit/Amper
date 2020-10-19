@@ -30,6 +30,7 @@ body {
     &:hover {
       background: lighten($darkGray, 5%);
       transition: 500ms;
+      cursor: pointer;
     }
   }
 
