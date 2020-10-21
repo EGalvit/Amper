@@ -9,10 +9,8 @@ import { User } from "../models/user";
 
 export class PasswordCheck implements ErrorStateMatcher {
   isErrorState(control: FormControl | null, form: FormGroupDirective | NgForm | null): boolean {
-    const invalidCtrl = !!(control && control.invalid && control.parent.dirty);
-    const invalidParent = !!(control && control.parent && control.parent.invalid && control.parent.dirty);
-
-    return (invalidCtrl || invalidParent);
+    const invalidParent = !!(control && control.parent && control.parent.invalid && control.parent.dirty && control.parent.hasError('notSame'));
+    return (invalidParent);
   }
 }
 
@@ -25,7 +23,8 @@ export class PasswordCheck implements ErrorStateMatcher {
 export class StartsideComponent implements OnInit {
   
   matcher = new PasswordCheck();
-    
+  failedLogin: boolean = false;
+  
   loginForm: FormGroup;
   loginUsername = new FormControl(null, [Validators.required, Validators.minLength(6)]);
   loginPassword = new FormControl(null, [Validators.required, Validators.minLength(6)]);
@@ -37,7 +36,6 @@ export class StartsideComponent implements OnInit {
   
   user: User;
   constructor(private _http: HttpService, private AuthenticationService: AuthenticationService, private router: Router, private fb: FormBuilder, private snackBar: MatSnackBar) {
-
     this.loginForm = this.fb.group({
       loginUsername: this.loginUsername,
       loginPassword: this.loginPassword
@@ -60,7 +58,7 @@ export class StartsideComponent implements OnInit {
       localStorage.setItem('User', JSON.stringify(this.user));
       this.router.navigate(['/forside']);
     }, (error) => {
-        console.log(error);
+        this.failedLogin = true;
     });;
   }
 
@@ -68,15 +66,15 @@ export class StartsideComponent implements OnInit {
     const formValue = this.signupForm.value;
     this._http.CreateUser(formValue.signupUsername, formValue.signupPassword);
     let config = new MatSnackBarConfig();
-    config.panelClass = ['snackTest'];
+    config.panelClass = ['snackBar'];
     config.duration = 5000;
     this.snackBar.open('Bruger oprettet', 'Luk', config);
+    this.signupForm.reset();
   }
 
   checkPasswords(fg: FormGroup) { 
   let pass = fg.controls.signupPassword.value;
   let confirmPass = fg.controls.signupConFirmPassword.value;
-
   return pass === confirmPass ? null : { notSame: true }
   } 
   
@@ -86,6 +84,10 @@ export class StartsideComponent implements OnInit {
 
   get s(){
     return this.signupForm.controls;
+  }
+
+  Clear() {
+    this.signupForm.reset();
   }
 
   ngOnInit(): void {

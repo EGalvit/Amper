@@ -6,7 +6,6 @@
 
     <div id="logininfo" class="row">
         <div>
-
             <form id="loginForm" [formGroup]="loginForm" (submit)="loginSubmit()">
                 <p id="logintext">Login</p>
                 <mat-form-field color='accent' class="inputField">
@@ -32,7 +31,7 @@
                         Minimum length not achieved
                     </mat-error>
                 </mat-form-field>
-
+                <p *ngIf="failedLogin" class="mat-error">Login error</p>
                 <button mat-flat-button type="submit" class="submitButton" [disabled]="loginForm.invalid">Login</button>
             </form>
 
@@ -77,6 +76,7 @@
                 </mat-form-field>
 
                 <button mat-raised-button type="submit" class="submitButton" [disabled]="signupForm.invalid" onclick="signupForm.style.visibility='hidden'; box2.style.marginTop='20%'; box2.style.visibility='visible'; loginForm.style.marginTop='30%'; loginForm.style.visibility='visible';">Submit</button>
+                <button mat-raised-button type="button" class="submitButton" onclick="signupForm.style.visibility='hidden'; box2.style.marginTop='20%'; box2.style.visibility='visible'; loginForm.style.marginTop='30%'; loginForm.style.visibility='visible';" (click)="Clear()">Go back</button>
             </form>
         </div>
     </div>
