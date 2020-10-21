@@ -1,21 +1,3 @@
-<!-- <header *ngIf="router != '/'">
-  <div class="navbar">
-    <a routerLink='/profil/{{ app.getUserID }}' class="navButton">Profil</a>
-    <a routerLink="/forside" class="navButton">Forside</a>
-    <a routerLink="/beskeder" class="navButton">Beskeder</a>
-    <div class="right">
-      <a (click)="ClearStorage()" routerLink="/" class="navButton">Log ud</a>
-      <a routerLink="/indstillinger" class="navButton" id="settings"><img alt="Indstillinger" src="assets/img/Settings.png" height="45px"/></a>
-    </div>
-    <div class="center">
-      <a routerLink="/"><img alt="Amper" src="assets/img/AmperLogo.png" height="45px"/></a>
-      <input type="text" placeholder="Søg" class="textInput" />
-    </div>
-  </div>
-</header>
-<router-outlet (click)="dismissSidebar()"></router-outlet> -->
-
-
 <mat-toolbar class="navBar" *ngIf="router != '/'" scroll="no">
   <button type="button" class="navBar" mat-icon-button (click)="drawer.toggle()">
     <mat-icon>menu</mat-icon>
@@ -31,15 +13,15 @@
   </div>
 </mat-toolbar>
  
-<mat-drawer-container class="sideNavContainer" hasBackdrop="false" scroll="no" autosize>
-  <mat-drawer #drawer class="sideNav" mode="over" > 
+<mat-drawer-container class="sideNavContainer" hasBackdrop="false" scroll="no" autosize (click)="drawer.close()">
+  <mat-drawer #drawer class="sideNav" mode="over"> 
     <!-- [openedSubject]="openedSubject" -->
-    <a (click)="Profil()"  class="navButton">Profil</a> <br>
-    <a routerLink="/forside" class="navButton">Forside</a> <br>
-    <a routerLink="/beskeder" class="navButton">Beskeder</a> <br>
-    <a routerLink="/indstillinger" class="navButton" id="settings">Indstillinger</a> <br>
-    <a (click)="ClearStorage()" routerLink="/" class="navButton">Log ud</a> <br>
+    <button class="navKnap" (click)="Profil(); drawer.toggle();">Profil</button> <br>
+    <button class="navKnap" routerLink="/forside" (click)="drawer.toggle()">Forside</button> <br>
+    <button class="navKnap" routerLink="/beskeder" (click)="drawer.toggle()">Beskeder</button> <br>
+    <button class="navKnap" routerLink="/indstillinger" id="settings" (click)="drawer.toggle()">Indstillinger</button> <br>
+    <button class="navKnap" (click)="ClearStorage(); drawer.toggle();" routerLink="/">Log ud</button> <br>
 
   </mat-drawer>
-  <router-outlet (click)="dismissSidebar()"></router-outlet>
+  <router-outlet></router-outlet>
 </mat-drawer-container>
