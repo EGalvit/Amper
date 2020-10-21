@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, NO_ERRORS_SCHEMA } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -12,9 +12,12 @@ import { ProfilComponent } from './profil/profil.component';
 import { BeskederComponent } from './beskeder/beskeder.component';
 import { IndstillingerComponent } from './indstillinger/indstillinger.component';
 import { DiscoverComponent } from './discover/discover.component';
+import { TestingComponent } from './testing/testing.component';
 
 import { AuthenticationService } from "./helpers/authentication.service";
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+
 
 @NgModule({
   declarations: [
@@ -24,7 +27,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     ProfilComponent,
     BeskederComponent,
     IndstillingerComponent,
-    DiscoverComponent
+    DiscoverComponent,
+    TestingComponent
   ],
   imports: [
     FormsModule,
@@ -36,9 +40,14 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     BrowserAnimationsModule,
     AngularMaterialModule,
   ],
+  exports: [
+    AngularMaterialModule
+  ],
   providers: [
     AuthenticationService
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  schemas: [ NO_ERRORS_SCHEMA ],
+  
 })
-export class AppModule { }
+export class AppModule { };

@@ -13,7 +13,7 @@ $orange: #ff803c;
     width: 50%;
     margin-right: 25%;
     margin-left: 25%;
-    height: 100vh;
+    height: 100%;
     background-color: #414141;
     overflow: auto;
 }
@@ -51,8 +51,6 @@ $orange: #ff803c;
         }
 }
 
-
-* {
-    margin: 0;
-    padding: 0;
-}
+.mat-radio-button ~ .mat-radio-button {
+    margin-left: 16px;
+  }

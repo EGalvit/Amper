@@ -24,7 +24,7 @@
     padding-top: 60px;
     background-color: #2a2a2a;
     width: auto;
-    height: 92.4vh;
+    height: 100%;
     margin-left: 0;
     margin-top: 0;
     overflow: hidden;
@@ -34,10 +34,6 @@ body {
 }
 ::-webkit-scrollbar {
     display: none;
-}
-* {
-    margin: 0;
-    padding: 0;
 }
 #profilbilled {
     margin: 3%;
@@ -69,6 +65,7 @@ body {
 
     button {
         margin-left: 29.1%;
+        cursor: pointer;
     }
 }
 #passwordBox {
@@ -76,6 +73,7 @@ body {
 
     button {
         margin-left: 31.5%;
+        cursor: pointer;
     }
 }
 #fødselsdagBox {
@@ -83,6 +81,7 @@ body {
 
     button {
         margin-left: 29.5%;
+        cursor: pointer;
     }
 }
 #lokationBox {
@@ -90,6 +89,7 @@ body {
 
     button {
         margin-left: 33.2%;
+        cursor: pointer;
     }
 }
 #kønBox {
@@ -97,6 +97,7 @@ body {
 
     button {
         margin-left: 39%;
+        cursor: pointer;
     }
 }
 #beskrivelseBox {
@@ -104,6 +105,7 @@ body {
 
     button {
         margin-left: 29.7%;
+        cursor: pointer;
     }
 }
 .button {
@@ -125,4 +127,23 @@ body {
     border: solid 1px #ff803c;
     // box-shadow: 0 0px 30px #ff803c;
     transition: .3s;
+}
+p {
+    color: green;
+}
+.dialogChange {
+    background-color: #2a2a2a;
+    width: 250px;
+    height: 150px;
+    padding: 20px;
+    // border-style: none;
+    // border: 10px;
+    margin: -24px;
+    border-radius: 15px;
+}
+// .backdropBackground {
+//     background-color: #414141;
+//   }
+::-webkit-scrollbar {
+    display: none;
 }
