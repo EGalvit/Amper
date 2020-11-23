@@ -5,56 +5,31 @@ $midGray: #414141;
 $lightGray: #525252;
 $orange: #ff803c;
 
+@media (max-width: 500px) {
+    .navKnap {
+      margin-top: 5% !important;
+      padding: 5% 20%;
+    }
+    .test {
+      margin-top: 10% !important;
+    }
+    .sideNav {
+      width: 100% !important;
+    }
+    .logo {
+      display: none;
+    }
+    .søgeFelt {
+      width: 90% !important;
+    }
+}
+
 .sideNavContainer {
     position: absolute;
     width: 100%;
     height: 100%;
     // border: 1px solid rgba(0, 255, 0, 0.5);
     overflow: hidden;
-}
-
-.sideNav {
-    padding: 6%;
-    z-index: 2;
-    background-color: #414141;
-    
-    a {
-        color: #ececec;
-    }
-}
-
-// ::ng-deep .mat-sidenav-backdrop.mat-sidenav-shown{
-//     background-color: transparent !important;
-// }
-
-.navBar {
-    position: fixed;
-    z-index: 3;
-    background-color: #525252;
-}
-.logo {
-    margin-left: 50%;
-}
-.søgeFelt {
-    // width: 220%;
-    width: 25vw;
-    // margin-top: 10%;
-    margin-left: 8vw;
-    // margin-bottom: 5%;
-    &:focus {
-        margin-top: 10%;
-    }
-    // &:active {
-    //     // margin-top: 10%;
-    // }
-}
-
-.sideNavContainer {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  // border: 1px solid rgba(0, 255, 0, 0.5);
-  overflow: hidden;
 }
 
 .sideNav {
@@ -69,17 +44,19 @@ $orange: #ff803c;
 }
 
 ::ng-deep .mat-sidenav-backdrop.mat-sidenav-shown{
-  background-color: transparent !important;
+    background-color: transparent !important;
 }
 
 .navBar {
-  position: fixed;
-  z-index: 3;
-  background-color: #525252;
+    position: fixed;
+    z-index: 3;
+    background-color: #525252;
 }
 .logo {
-  margin-left: 25vw;
+    margin-left: 25%;
+    margin-top: .5%;
 }
+
 .søgeFelt {
   // width: 220%;
   width: 25vw;
@@ -93,10 +70,7 @@ $orange: #ff803c;
   //     // margin-top: 10%;
   // }
 }
-.søgeFeltLogo {
-  margin-top: 13%;
-  margin: 0;
-}
+
 
 .navKnap {
   border-style: none;
