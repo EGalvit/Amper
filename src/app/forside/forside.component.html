@@ -12,15 +12,22 @@
                 <textarea class="lavOpslag" placeholder="What's happening?" id="postText"></textarea>
                 <button class="sendOpslag" (click)="CreatePost()">Send</button> -->
 
-                <form [formGroup]="opslagForm" (submit)="CreatePost()">
-                    <mat-form-field>
-                        <mat-label>Lav opslag</mat-label>
-                        <input matInput formControlName="opslagText">
+                <form [formGroup]="postForm" (submit)="CreatePost()">
+                    <mat-form-field color="accent" appearance="outline" style="margin-bottom: -1.25em">
+                        <mat-label>whats on your mind</mat-label>
+                        <textarea matInput #post maxlength="256" cdkTextareaAutosize cdkAutosizeMinRows="2" cdkAutosizeMaxRows="5" formControlName="postText"></textarea>
+                        <mat-hint align="start">{{ post.value.length }} / 256</mat-hint>
                     </mat-form-field>
-                    <button type="submit" class="sendOpslag">Send</button>
+                    <div>
+                        <mat-chip-list *ngIf="imageName">
+                            <mat-chip [selectable]="selectable" (removed)="removeImage()">{{imageName}}<mat-icon matChipRemove>cancel</mat-icon></mat-chip>
+                        </mat-chip-list>
+                        <input style="display: none" (change)="onFileChange($event)" #hiddenfileinput type="file" accept="image/*" formControlName="postImage">
+                        <button (click)="hiddenfileinput.click()" type="button" class="mat-raised-button fileButton"><mat-icon style="vertical-align: middle">image</mat-icon></button>
+                        <button type="submit" class="mat-raised-button">Send</button>
+                    </div>
                 </form>
             </div>
-
             <div id="opslagContainer">
                 <ul *ngIf="posts">
                     <li *ngFor="let post of posts">

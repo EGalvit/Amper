@@ -13,12 +13,14 @@ export class ForsideComponent implements OnInit {
   lastRowNumber: number = 0;
   id: any;
   post: string;
+  imageName: string;
   
-  opslagForm: FormGroup;
-  opslagText = new FormControl(null, [Validators.required]);
+  postForm: FormGroup;
+  postText = new FormControl(null, [Validators.required]);
+  postImage = new FormControl();
 
   constructor(private _http: HttpService,  private fb: FormBuilder){ 
-    this.opslagForm = this.fb.group({opslagText: this.opslagText})
+    this.postForm = this.fb.group({postText: this.postText, postImage: this.postImage})
   }
 
   ngOnInit(): void {
@@ -42,8 +44,31 @@ export class ForsideComponent implements OnInit {
     // });
     // this.lastRowNumber = 0;
     // this.LoadMore();
-    const formValue = this.opslagForm.value;
-    console.log(formValue.opslagText)
+    const formValue = this.postForm.value;
+    console.log(formValue.postText);
+    console.log(formValue.postImage);
+  }
+
+  //converter et uploadet billed til en base64 string som kan sendes til apiet
+  onFileChange($event){
+    // console.log($event.target.files[0]);
+    let me = this;
+    let file = $event.target.files[0];
+    let reader = new FileReader();
+    reader.readAsDataURL(file);
+    reader.onload = function () {
+      //me.modelvalue = reader.result;
+      console.log(reader.result);
+      me.imageName = file.name;
+    };
+    reader.onerror = function (error) {
+      console.log('Error: ', error);
+    };
+  }
+
+  removeImage() {
+    console.log("removed image", this.imageName);
+    this.imageName ="";
   }
 
 }

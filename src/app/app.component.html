@@ -6,17 +6,22 @@
       <a routerLink="/"><img alt="Amper" src="assets/img/AmperLogo.png" height="45px" class="søgeFeltLogo" /></a>
   </div>
   <div class="center">
-    <mat-form-field class="søgeFelt">
-      <!-- <mat-label>Søg</mat-label> -->
-      <input matInput placeholder="Søg" type="text"/>
-    </mat-form-field>
+    <form [formGroup]="searchForm" (submit)="CreatePost()">
+      <mat-form-field class="søgeFelt">
+        <!-- <mat-label>Søg</mat-label> -->
+        <input matInput type="search"/>
+        <button mat-button matSuffix type="submit">
+         <mat-icon>search</mat-icon>
+        </button>
+      </mat-form-field>
+    </form>
   </div>
 </mat-toolbar>
  
 <mat-drawer-container class="sideNavContainer" hasBackdrop="false" scroll="no" autosize (click)="drawer.close()">
   <mat-drawer #drawer class="sideNav" mode="over"> 
     <!-- [openedSubject]="openedSubject" -->
-    <button class="navKnap" (click)="Profil(); drawer.toggle();">Profil</button> <br>
+    <button class="navKnap test" (click)="Profil(); drawer.toggle();">Profil</button> <br>
     <button class="navKnap" routerLink="/forside" (click)="drawer.toggle()">Forside</button> <br>
     <button class="navKnap" routerLink="/beskeder" (click)="drawer.toggle()">Beskeder</button> <br>
     <button class="navKnap" routerLink="/indstillinger" id="settings" (click)="drawer.toggle()">Indstillinger</button> <br>

@@ -59,6 +59,7 @@ export class StartsideComponent implements OnInit {
       this.router.navigate(['/forside']);
     }, (error) => {
         this.failedLogin = true;
+        console.log(error);
     });;
   }
 

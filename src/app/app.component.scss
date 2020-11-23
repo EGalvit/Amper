@@ -5,6 +5,25 @@ $midGray: #414141;
 $lightGray: #525252;
 $orange: #ff803c;
 
+@media (max-width: 500px) {
+    .navKnap {
+      margin-top: 5% !important;
+      padding: 5% 20%;
+    }
+    .test {
+      margin-top: 10% !important;
+    }
+    .sideNav {
+      width: 100% !important;
+    }
+    .logo {
+      display: none;
+    }
+    .søgeFelt {
+      width: 90% !important;
+    }
+}
+
 .sideNavContainer {
     position: absolute;
     width: 100%;

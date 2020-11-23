@@ -3,7 +3,6 @@
         width: 100% !important;
         margin: 0 !important;
     }
-
 }
 
 
@@ -46,16 +45,30 @@
 #createOpslag {
     // position: absolute;
     // visibility: hidden;
-    height: auto;
-    display: inline-block;
-    border-radius: 15px;
-    width: 92%;
     // height: auto;
+    // display: inline-block;
+    border-radius: 15px;
+    width: 94%;
+    height: auto;
     background-color: #525252;
-    margin-left: 2.5%;
-    margin-top: 2.5%;
+    margin: auto;
+    margin-top: 2%;
     padding: 1.5%;
+    // padding-bottom: 3.5%;
+    // position: relative;
+
+    mat-form-field {
+        width: 100%;
+    }
+    div {
+        display: flex;
+        justify-content: flex-end;
+        button {
+            margin: 0 .5%;
+        }
+    }
 }
+
 .lavOpslag {
         padding: 10px !important;
         padding-bottom: 7px !important; 
