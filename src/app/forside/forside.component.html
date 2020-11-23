@@ -29,7 +29,7 @@
                                     alt="Profilbilled" src="assets/img/AmperLogo - Darker.png" height="60px"></button>
                             <label id="profilnavnopslag">{{post.postername}}</label> <br>
                             <div id="opslagindhold">
-                                <p id="opslagtext">{{post.post}}</p><br>
+                                <p id="opslagtext" class="opslagText">{{post.post}}</p><br>
                             </div>
                             <div id="opslagreaktioner">
                                 <div id="likebox">
@@ -41,7 +41,7 @@
                                 <div id="kommentarbox">
                                     <button id="kommenteropslag" class="opslagButton"><img id="kommentar"
                                             alt="Kommentar" src="assets/img/Kommentar.png" height="18px"><img
-                                            class="lite" alt="KommentarLite" src="assets/img/Kommentar-Lite.png"
+                                            class="lite kommentarLite" alt="KommentarLite" src="assets/img/Kommentar-Lite.png"
                                             height="18px"></button>
                                     <p>{{post.comments}}</p>
                                 </div>

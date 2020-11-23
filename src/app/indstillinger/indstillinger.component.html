@@ -5,27 +5,27 @@
             <div id="skiftBox">
                 <div id="brugernavnBox">
                     <p>Brugernavn</p>
-                    <button id="skiftBrugernavn" class="skiftKnap" (click)="openDialog()">Skift brugernavn</button>
+                    <button id="skiftBrugernavn" class="skiftKnap" (click)="openBrugernavnDialog()">Skift brugernavn</button>
                 </div>
                 <div id="passwordBox">
                     <p>Password</p>
-                    <button id="skiftPassword" class="skiftKnap">Skift password</button>
+                    <button id="skiftPassword" class="skiftKnap" (click)="openKodeordDialog()">Skift password</button>
                 </div>
                 <div id="fødselsdagBox">
                     <p>Fødselsdag</p>
-                    <button id="skiftFødselsdag" class="skiftKnap">Skift fødselsdato</button>
+                    <button id="skiftFødselsdag" class="skiftKnap" (click)="openFodselsdagDialog()">Skift fødselsdato</button>
                 </div>
                 <div id="lokationBox">
                     <p>Land/by</p>
-                    <button id="skiftLokation" class="skiftKnap">Skift lokation</button>
+                    <button id="skiftLokation" class="skiftKnap" (click)="openLokationDialog()">Skift lokation</button>
                 </div>
                 <div id="kønBox">
                     <p>Køn</p>
-                    <button id="skiftKøn" class="skiftKnap">Skift køn</button>
+                    <button id="skiftKøn" class="skiftKnap" (click)="openKonDialog()">Skift køn</button>
                 </div>
                 <div id="beskrivelseBox">
                     <p>Beskrivelse</p>
-                    <button id="skiftBeskrivelse" class="skiftKnap">Skift beskrivelse</button>
+                    <button id="skiftBeskrivelse" class="skiftKnap" (click)="openBeskrivelseDialog()">Skift beskrivelse</button>
                 </div>
             </div>
             <button id="sletKnap" class="button">Slet konto</button>

@@ -5,12 +5,13 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { AngularMaterialModule } from './angular-material.module';
+import { CommonModule } from '@angular/common';
 
 import { ForsideComponent } from './forside/forside.component';
 import { StartsideComponent } from './startside/startside.component';
 import { ProfilComponent } from './profil/profil.component';
 import { BeskederComponent } from './beskeder/beskeder.component';
-import { IndstillingerComponent } from './indstillinger/indstillinger.component';
+import { IndstillingerComponent, FødselsdagDialog, BrugernavnDialog } from './indstillinger/indstillinger.component';
 import { DiscoverComponent } from './discover/discover.component';
 import { TestingComponent } from './testing/testing.component';
 
@@ -28,7 +29,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     BeskederComponent,
     IndstillingerComponent,
     DiscoverComponent,
-    TestingComponent
+    TestingComponent,
+    FødselsdagDialog,
+    BrugernavnDialog
   ],
   imports: [
     FormsModule,
@@ -39,12 +42,17 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     ReactiveFormsModule,
     BrowserAnimationsModule,
     AngularMaterialModule,
+    CommonModule
   ],
   exports: [
     AngularMaterialModule
   ],
   providers: [
     AuthenticationService
+  ],
+  entryComponents: [
+    FødselsdagDialog,
+    BrugernavnDialog
   ],
   bootstrap: [AppComponent],
   schemas: [ NO_ERRORS_SCHEMA ],
