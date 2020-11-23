@@ -3,7 +3,7 @@
     <mat-icon>menu</mat-icon>
   </button>
   <div class="logo">
-      <a routerLink="/"><img alt="Amper" src="assets/img/AmperLogo.png" height="45px"/></a>
+      <a routerLink="/" (click)="drawer.close()"><img alt="Amper" src="assets/img/AmperLogo.png" height="45px"/></a>
   </div>
   <div class="center">
     <form [formGroup]="searchForm" (submit)="CreatePost()">

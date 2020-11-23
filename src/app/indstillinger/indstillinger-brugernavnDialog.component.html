@@ -1,0 +1,25 @@
+<!-- <div class="dialogChange" color='accent'>
+    <p>Nyt brugernavn</p>
+    <input type="text" id="nytUsername" placeholder="Nyt burgernavn" class="textInput">
+    <button class="button" (click)="Test()">Skift</button>
+</div> -->
+
+
+<!-- <mat-slider class="slider" min="1" max="100" step="1" value="1"></mat-slider> -->
+
+    <mat-form-field class="Field" *ngIf="brugernavn">
+            <mat-slider class="slider" min="1" max="100" step="1" value="1"></mat-slider>
+        <mat-label>Nyt brugernavn</mat-label>
+        <input matInput type="text">
+        <button mat-button matSuffix mat-icon-button aria-label="Clear">
+          <mat-icon>close</mat-icon>
+        </button>
+        <button></button>
+        <button></button>
+    </mat-form-field>
+
+    <div class="dialogChange" color='accent' *ngIf="kodeord">
+        <p>Nyt kodeord</p>
+        <input type="text" id="nytKodeord" placeholder="Nyt kodeord" class="textInput">
+        <button class="button">Skift</button>
+    </div>
