@@ -1,15 +1,15 @@
-<mat-toolbar class="navBar" *ngIf="router != '/'" scroll="no">
+<mat-toolbar class="navBar mat-toolbar-single-row" *ngIf="router != '/'" scroll="no">
   <button type="button" class="navBar" mat-icon-button (click)="drawer.toggle()">
     <mat-icon>menu</mat-icon>
   </button>
   <div class="logo">
-      <a routerLink="/"><img alt="Amper" src="assets/img/AmperLogo.png" height="45px" class="søgeFeltLogo" /></a>
+      <a routerLink="/"><img alt="Amper" src="assets/img/AmperLogo.png" height="45px"/></a>
   </div>
   <div class="center">
     <form [formGroup]="searchForm" (submit)="CreatePost()">
       <mat-form-field class="søgeFelt">
         <!-- <mat-label>Søg</mat-label> -->
-        <input matInput type="search"/>
+        <input matInput type="search" formControlName="searchInput"/>
         <button mat-button matSuffix type="submit">
          <mat-icon>search</mat-icon>
         </button>

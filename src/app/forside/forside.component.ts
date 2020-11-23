@@ -19,7 +19,7 @@ export class ForsideComponent implements OnInit {
   postText = new FormControl(null, [Validators.required]);
   postImage = new FormControl();
 
-  constructor(private _http: HttpService,  private fb: FormBuilder){ 
+  constructor(private _http: HttpService, private fb: FormBuilder){ 
     this.postForm = this.fb.group({postText: this.postText, postImage: this.postImage})
   }
 
@@ -45,6 +45,9 @@ export class ForsideComponent implements OnInit {
     // this.lastRowNumber = 0;
     // this.LoadMore();
     const formValue = this.postForm.value;
+    this._http.HomePost(this.id, formValue.postText).toPromise().then((data) => {
+      console.log(data);
+    });
     console.log(formValue.postText);
     console.log(formValue.postImage);
   }
@@ -69,6 +72,7 @@ export class ForsideComponent implements OnInit {
   removeImage() {
     console.log("removed image", this.imageName);
     this.imageName ="";
+    this.postImage.reset();
   }
 
 }

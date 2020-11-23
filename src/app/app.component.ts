@@ -2,6 +2,7 @@ import { Component, ViewEncapsulation } from '@angular/core';
 import { OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Subject } from 'rxjs';
+import { FormBuilder, FormGroup, Validators, FormControl, FormGroupDirective, NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-root',
@@ -15,8 +16,12 @@ export class AppComponent implements OnInit{
   userid: any;
   openedSubject = new Subject<boolean>();
 
-  constructor(private _router: Router) {
+  searchForm: FormGroup;
+  searchInput = new FormControl(null, [Validators.required]);
+
+  constructor(private _router: Router, private fb: FormBuilder) {
     _router.events.subscribe(() => (this.router = _router.url));
+    this.searchForm = this.fb.group({searchInput: this.searchInput})
   }
 
   ngOnInit(): void {

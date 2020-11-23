@@ -33,13 +33,14 @@ $orange: #ff803c;
 }
 
 .sideNav {
-    padding: 6%;
-    z-index: 2;
-    background-color: #414141;
-    
-    a {
-        color: #ececec;
-    }
+  margin-top: 0%;
+  padding: 5%;
+  z-index: 2;
+  background-color: #414141;
+  
+  a {
+      color: #ececec;
+  }
 }
 
 ::ng-deep .mat-sidenav-backdrop.mat-sidenav-shown{
@@ -52,53 +53,10 @@ $orange: #ff803c;
     background-color: #525252;
 }
 .logo {
-    margin-left: 50%;
-}
-.søgeFelt {
-    // width: 220%;
-    width: 25vw;
-    // margin-top: 10%;
-    margin-left: 8vw;
-    // margin-bottom: 5%;
-    &:focus {
-        margin-top: 10%;
-    }
-    // &:active {
-    //     // margin-top: 10%;
-    // }
+    margin-left: 25%;
+    margin-top: .5%;
 }
 
-.sideNavContainer {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  // border: 1px solid rgba(0, 255, 0, 0.5);
-  overflow: hidden;
-}
-
-.sideNav {
-  margin-top: 0%;
-  padding: 5%;
-  z-index: 2;
-  background-color: #414141;
-  
-  a {
-      color: #ececec;
-  }
-}
-
-::ng-deep .mat-sidenav-backdrop.mat-sidenav-shown{
-  background-color: transparent !important;
-}
-
-.navBar {
-  position: fixed;
-  z-index: 3;
-  background-color: #525252;
-}
-.logo {
-  margin-left: 25vw;
-}
 .søgeFelt {
   // width: 220%;
   width: 25vw;
@@ -112,10 +70,7 @@ $orange: #ff803c;
   //     // margin-top: 10%;
   // }
 }
-.søgeFeltLogo {
-  margin-top: 13%;
-  margin: 0;
-}
+
 
 .navKnap {
   border-style: none;
