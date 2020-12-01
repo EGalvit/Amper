@@ -14,6 +14,9 @@ export class ForsideComponent implements OnInit {
   id: any;
   post: string;
   imageName: string;
+  likeCount: any;
+  ampCount: any;
+  textPost: any;
   
   postForm: FormGroup;
   postText = new FormControl(null, [Validators.required]);
@@ -74,6 +77,38 @@ export class ForsideComponent implements OnInit {
     console.log("removed image", this.imageName);
     this.imageName ="";
     this.postImage.reset();
+  }
+
+  Like(PostID: number, index: number){
+    this.likeCount = document.getElementById("likeCount"+index).innerHTML;
+    
+    
+    this._http.PostLike(PostID, this.id)
+    .toPromise()
+    .then((data) =>{    
+      console.log(data.status);
+      if (data.status == 201) {
+        this.likeCount++;    
+      } else {
+        this.likeCount--;
+      }
+      document.getElementById("likeCount"+index).innerHTML = this.likeCount;
+    });
+  }
+  Amp(PostID: number, index: number){
+    console.log("Amp virker ikke!!!")
+    // this.ampCount = document.getElementById("ampCount"+index).innerHTML;
+    // this.textPost = document.getElementById("opslagtext"+index).innerHTML;
+
+    // this._http.Amplify(this.id, this.textPost, PostID, 1)
+    // .toPromise()
+    // .then((data) => {
+    //   console.log(data.status)
+    //   if (data.status == 201){
+    //     this.ampCount++;
+    //   }
+    //   document.getElementById("ampCount"+index).innerHTML = this.ampCount;
+    // });
   }
 
 }

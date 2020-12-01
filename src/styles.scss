@@ -177,12 +177,14 @@ $orange: #ff803c;
         font-size: 32px;
         margin-left: 1.8%;
         font-weight: 600;
+        cursor: pointer;
     }
 
     .opslagText {
         height: 100%;
         margin: 3% 3% 2% 1.5%;
         color: white;
+        word-wrap: break-word;
         // text-align: left;
     }
 

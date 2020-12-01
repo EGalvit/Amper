@@ -43,8 +43,8 @@ export class HttpService {
     return this.http.post(`https://localhost:44358/api/Follower/post/values?followerid=${followerid}&followedid=${followedid}`, "", { observe: 'response' });
   }
 
-  DiscoverGet(lastRowNumber: number) {
-    return this.http.get(`https://localhost:44358/api/Discover/get/values?lastRowNumber=${lastRowNumber}`);
+  DiscoverGet(lastRowNumber: number, id: number) {
+    return this.http.get(`https://localhost:44358/api/Discover/get/values?id=${id}&lastRowNumber=${lastRowNumber}`);
   }
 
   HomeGet(lastRowNumber: number, id: number) {
@@ -73,5 +73,21 @@ export class HttpService {
       isAmp: isAmp
     };
     return this.http.post(`https://localhost:44358/api/Post/post`, this.postData, { observe: 'response' });
+  }
+
+  MessagePost(UserID: number, Message: string, ReciverID: number) {
+    this.postData = {
+      senderid: UserID,
+      message: Message,
+      recipientid: ReciverID,
+      sendername: 1,
+      recipientname: 1,
+      date: 1
+    };
+    return this.http.post(`https://localhost:44358/api/Message/post`, this.postData);
+  }
+
+  MessageGet(lastRowNumber: number, senderid: number, reciverid: number) {
+    return this.http.get(`https://localhost:44358/api/Message/get/values?senderid=${senderid}&reciverid=${reciverid}&lastRowNumber=${lastRowNumber}`);
   }
 }
