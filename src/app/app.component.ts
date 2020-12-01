@@ -17,7 +17,7 @@ export class AppComponent implements OnInit{
   openedSubject = new Subject<boolean>();
 
   searchForm: FormGroup;
-  searchInput = new FormControl(null, [Validators.required]);
+  searchInput = new FormControl(null);
 
   constructor(private _router: Router, private fb: FormBuilder) {
     _router.events.subscribe(() => (this.router = _router.url));
@@ -39,5 +39,9 @@ export class AppComponent implements OnInit{
   Profil() {
     this.userid = localStorage.getItem("UserID");
     this._router.navigateByUrl(`/profil/${this.userid}`);
+  }
+
+  search() {
+    this._router.navigate(['/search'],{queryParams: {'': this.searchForm.value.searchInput}});
   }
 }

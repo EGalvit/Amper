@@ -1,0 +1,67 @@
+<body scroll="no">
+    <div class="fullbox" scroll="no">
+        <div class="mainbox" scroll="no">
+            <div id="opslagContainer">
+                <ul *ngIf="userResults">
+                    <li *ngFor="let userResult of userResults">
+                        <div id="opslag">
+                            <button id="gotoprofile" routerLink="/profil/{{userResult.UserID}}" class="opslagButton">
+                                <img id="profilbilled" alt="Profilbilled" src="assets/img/AmperLogo - Darker.png" height="60px">
+                            </button>
+                            <label id="profilnavnopslag" routerLink="/profil/{{userResult.UserID}}">{{userResult.username}}</label>
+                            <div id="opslagindhold">
+                                <p id="opslagtext" class="opslagText">{{userResult.userdescription}}</p>
+                            </div>
+                            <div>
+                               <label class="labelSpacer"><strong>Followers</strong> {{userResult.followercount}}</label>  
+                               <label><strong>Following</strong> {{userResult.followingcount}}</label>  
+                            </div>
+                            <!-- <div>
+                                <button class="mat-raised-button">message</button>
+                                <button class="mat-raised-button">follow</button>
+                            </div> -->
+                        </div>
+                    </li>
+                </ul>
+                <ul *ngIf="postResults">
+                    <li *ngFor="let post of postResults">
+                        <div id="opslag">
+                            <button id="gotoprofile" routerLink="/profil/{{post.posterid}}" class="opslagButton">
+                                <img id="profilbilled" alt="Profilbilled" src="assets/img/AmperLogo - Darker.png" height="60px">
+                            </button>
+                            <label id="profilnavnopslag" routerLink="/profil/{{post.posterid}}">{{post.postername}}</label> <br>
+                            <div id="opslagindhold">
+                                <p id="opslagtext" class="opslagText">{{post.post}}</p><br>
+                            </div>
+                                <div id="opslagreaktioner">
+                                    <div id="likebox">
+                                        <button id="likeopslag" class="opslagButton">
+                                            <img id="like" alt="Like" src="assets/img/Like.png" height="20px">
+                                            <img class="lite" alt="LikeLite"src="assets/img/Like-Lite.png" height="20px">
+                                        </button>
+                                        <p>{{post.likes}}</p>
+                                    </div>
+                                    <div id="kommentarbox">
+                                        <button id="kommenteropslag" class="opslagButton">
+                                            <img id="kommentar" alt="Kommentar" src="assets/img/Kommentar.png" height="18px">
+                                            <img class="lite kommentarLite" alt="KommentarLite" src="assets/img/Kommentar-Lite.png" height="18px">
+                                        </button>
+                                        <p>{{post.comments}}</p>
+                                    </div>
+                                    <div id="delbox">
+                                        <button id="delopslag" class="opslagButton">
+                                            <img id="del" alt="Del" src="assets/img/Del.png" height="20px">
+                                            <img class="lite" alt="KommentarLite" src="assets/img/Del-Lite.png" height="20px">
+                                        </button>
+                                        <p>{{post.amps}}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                <!-- </div> -->
+            </div>
+            <div style="margin-bottom: 8vh;"></div>
+        </div>
+    </div>
+</body>

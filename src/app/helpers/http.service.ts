@@ -50,6 +50,12 @@ export class HttpService {
   HomeGet(lastRowNumber: number, id: number) {
     return this.http.get(`https://localhost:44358/api/Home/get/values?id=${id}&lastRowNumber=${lastRowNumber}`);
   }
+  SearchGet(s: string){
+    return this.http.get(`https://localhost:44358/api/Search/get/values?searchQuery=${s}`);
+  }
+  SearchGet2(s: string){
+    return this.http.get(`https://localhost:44358/api/SearchPost/get/values?searchQuery=${s}`);
+  }
 
   HomePost(UserID: number, post: string){
     this.postData = {

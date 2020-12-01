@@ -48,6 +48,7 @@ export class ForsideComponent implements OnInit {
     this._http.HomePost(this.id, formValue.postText).toPromise().then((data) => {
       console.log(data);
     });
+    this.postForm.reset();
     console.log(formValue.postText);
     console.log(formValue.postImage);
   }

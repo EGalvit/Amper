@@ -6,8 +6,8 @@
       <a routerLink="/" (click)="drawer.close()"><img alt="Amper" src="assets/img/AmperLogo.png" height="45px"/></a>
   </div>
   <div class="center">
-    <form [formGroup]="searchForm" (submit)="CreatePost()">
-      <mat-form-field class="søgeFelt">
+    <form [formGroup]="searchForm" (submit)="search()">
+      <mat-form-field class="søgeFelt inputField">
         <!-- <mat-label>Søg</mat-label> -->
         <input matInput type="search" formControlName="searchInput"/>
         <button mat-button matSuffix type="submit">

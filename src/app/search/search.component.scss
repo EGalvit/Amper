@@ -1,0 +1,37 @@
+.labelSpacer {
+    margin: 2%;
+}
+ul {
+    list-style-type: none;
+}
+
+.mainbox {
+    padding: 1px;
+    border: 1px;
+    border-color: #ff803c;
+    position: relative;
+    width: 50%;
+    margin-top: 64px;
+    margin-right: 25%;
+    margin-left: 25%;
+    height: 100%;
+    background-color: #414141;
+    overflow: auto;
+}
+.fullbox {
+    position: auto;
+    // padding-top: 60px;
+    background-color: #2a2a2a;
+    width: auto;
+    height: 100%;
+    margin-left: 0;
+    overflow: hidden;
+}
+* {
+    margin: 0;
+    padding: 0;
+}
+
+// #opslagContainer {
+//     margin-bottom: 1em;
+// }

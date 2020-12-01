@@ -63,12 +63,13 @@ $orange: #ff803c;
   // margin-top: 10%;
   margin-left: 8vw;
   // margin-bottom: 5%;
-  &:focus {
-      margin-top: 10%;
-  }
-  // &:active {
-  //     // margin-top: 10%;
+  // &:focus {
+  //     margin-top: 10%;
   // }
+  input.mat-input-element {
+    height:28px;
+    font-size: 20px;
+  }
 }
 
 
