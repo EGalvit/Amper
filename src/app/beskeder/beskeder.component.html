@@ -1,34 +1,40 @@
 <body>
-    <div class="fullbox">
-        <div class="mainbox">
-            <input type="text" id="name" placeholder="placeholder" class="textInput">
-            <p></p>
-            <button class="buttonDesign">Press me!</button>
-            <mat-slider class="slider" min="1" max="100" step="1" value="1"></mat-slider>
-            <br>
-            <mat-form-field>
-                <mat-label>whats on your mind</mat-label>
-                <textarea matInput #post maxlength="124" placeholder="whats on your mind"></textarea>
-                <mat-hint align="end">{{ post.value.length }} / 124</mat-hint>
-            </mat-form-field>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-
-            <form>
-                <mat-form-field color='accent'>
-                    <mat-label>Username</mat-label>
-                    <input matInput maxlength="124" placeholder="Your username" autocomplete="off">
-                </mat-form-field>
-                <mat-form-field color='accent'>
-                    <mat-label>Password</mat-label>
-                    <input type="password" matInput maxlength="124" placeholder="Your password" autocomplete="off">
-                </mat-form-field>
-                <br>
-                <button type="submit" mat-raised-button color="primary">Login</button>
-            </form>
+    <div class="fullbox" >
+        <div class="mainbox" scrollDownOnLoad="true">
+            <div id="opslagContainer" >
+                <ul *ngIf="messages" >
+                    <li *ngFor="let message of messages; let i = index">
+                        <div id="opslag" >
+                            <button onclick="" id="gotoprofile" class="opslagButton" routerLink="/profil/{{message.senderid}}"><img id="profilbilled"
+                                alt="Profilbilled" src="assets/img/AmperLogo - Darker.png" height="60px"
+                                ></button>
+                            <label id="profilnavnopslag" routerLink="/profil/{{message.senderid}}">{{message.postername}}</label> <br>
+                            <!-- <label>{{post.PostID}}</label> -->
+                            <!-- <label id="profilnavnopslag" routerLink="/profil/{{post.posterid}}">{{post.postername}}</label> <br> -->
+                            <div id="opslagindhold">
+                                <p id="opslagtext{{i}}" class="opslagText">{{message.message}}</p> <br>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div >
+                <form [formGroup]="postForm" (submit)="CreatePost()" id="skrivTekst">
+                    <mat-form-field color="accent" appearance="outline" style="margin-bottom: -1.25em">
+                        <mat-label>whats on your mind</mat-label>
+                        <textarea matInput #post maxlength="256" cdkTextareaAutosize cdkAutosizeMinRows="2" cdkAutosizeMaxRows="5" formControlName="postText"></textarea>
+                        <button mat-button type="submit" id="sendButton">
+                            <mat-icon>send</mat-icon>
+                        </button>
+                        <mat-hint align="start">{{ post.value.length }} / 256</mat-hint>
+                    </mat-form-field>
+                </form>
+            </div>
+            <!-- <div id="sendMessage">
+                <input id="skrivTekst">
+            </div> -->
+            <!-- <div style="height: 100px;"></div> -->
+            <!-- #scrollMe [scrollTop]="scrollMe.scrollHeight" -->
         </div>
     </div>
 </body>

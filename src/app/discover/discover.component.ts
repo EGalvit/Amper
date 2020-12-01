@@ -19,14 +19,16 @@ export class DiscoverComponent implements OnInit {
   constructor(private _http: HttpService) { }
 
   ngOnInit(): void {
+    this.id = localStorage.getItem("UserID");
     this.LoadMore();
-    this.id = localStorage.getItem('UserID')
   }
 
   LoadMore(){
-    this._http.DiscoverGet(this.lastRowNumber)
+    console.log(this.id);
+    this._http.DiscoverGet(this.lastRowNumber, this.id)
     .subscribe((data) =>{
       this.posts = data;
+      console.log(data);
     });
     this.lastRowNumber += 50;
   }
@@ -47,17 +49,19 @@ export class DiscoverComponent implements OnInit {
     });
   }
   Amp(PostID: number, index: number){
-    this.ampCount = document.getElementById("ampCount"+index).innerHTML;
-    this.postText = document.getElementById("opslagtext"+index).innerHTML;
+    console.log("Amp virker ikke!!!")
+    // this.ampCount = document.getElementById("ampCount"+index).innerHTML;
+    // this.textPost = document.getElementById("opslagtext"+index).innerHTML;
 
-    this._http.Amplify(this.id, this.postText, PostID, 1)
-    .toPromise()
-    .then((data) => {
-      console.log(data.status)
-      if (data.status == 201){
-        this.ampCount++;
-      }
-      document.getElementById("ampCount"+index).innerHTML = this.ampCount;
-    });
+    // this._http.Amplify(this.id, this.textPost, PostID, 1)
+    // .toPromise()
+    // .then((data) => {
+    //   console.log(data.status)
+    //   if (data.status == 201){
+    //     this.ampCount++;
+    //   }
+    //   document.getElementById("ampCount"+index).innerHTML = this.ampCount;
+    // });
   }
+  // GoToProfile(posterID: number)
 }

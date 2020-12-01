@@ -17,6 +17,7 @@ import { TestingComponent } from './testing/testing.component';
 
 import { AuthenticationService } from "./helpers/authentication.service";
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ScrollToBottomDirective } from './scroll-to-bottom.directive';
 
 
 
@@ -31,7 +32,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     DiscoverComponent,
     TestingComponent,
     FødselsdagDialog,
-    BrugernavnDialog
+    BrugernavnDialog,
+    ScrollToBottomDirective,
   ],
   imports: [
     FormsModule,
