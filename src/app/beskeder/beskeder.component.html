@@ -1,32 +1,43 @@
 <body>
     <div class="fullbox" >
-        <div class="mainbox" scrollDownOnLoad="true">
+        <div id="test">
+            <ul *ngIf="messagePerson">
+                <li *ngFor="let senderid of messagePerson | orderBy:'order':true; let index = index; let odd=odd; let even=even" [ngClass]="{ odd: odd, even: even }">
+                    <div>
+                        <button class="testButton" (click)="ChangeMessenger(senderid.senderid)">{{ senderid.sendername }}</button>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div #scrollMe class="mainbox" >
             <div id="opslagContainer" >
                 <ul *ngIf="messages" >
                     <li *ngFor="let message of messages; let i = index">
-                        <div id="opslag" >
-                            <button onclick="" id="gotoprofile" class="opslagButton" routerLink="/profil/{{message.senderid}}"><img id="profilbilled"
-                                alt="Profilbilled" src="assets/img/AmperLogo - Darker.png" height="60px"
-                                ></button>
-                            <label id="profilnavnopslag" routerLink="/profil/{{message.senderid}}">{{message.postername}}</label> <br>
-                            <!-- <label>{{post.PostID}}</label> -->
-                            <!-- <label id="profilnavnopslag" routerLink="/profil/{{post.posterid}}">{{post.postername}}</label> <br> -->
-                            <div id="opslagindhold">
-                                <p id="opslagtext{{i}}" class="opslagText">{{message.message}}</p> <br>
+                        <div [ngClass]="message.recipientid == userID ? 'modtager': 'sender'">
+                            <div >
+                                <button onclick="" id="gotoprofile" class="opslagButton" routerLink="/profil/{{message.senderid}}"><img id="profilbilled"
+                                    alt="Profilbilled" src="assets/img/AmperLogo - Darker.png" height="60px"
+                                    ></button>
+                                <label id="profilnavnopslag" routerLink="/profil/{{message.senderid}}">{{message.postername}}</label> <br>
+                                <!-- <label>{{post.PostID}}</label> -->
+                                <!-- <label id="profilnavnopslag" routerLink="/profil/{{post.posterid}}">{{post.postername}}</label> <br> -->
+                                <div id="opslagindhold">
+                                    <p id="opslagtext{{i}}" class="opslagText">{{message.message}}</p> <br>
+                                </div>
                             </div>
                         </div>
                     </li>
                 </ul>
             </div>
-            <div >
-                <form [formGroup]="postForm" (submit)="CreatePost()" id="skrivTekst">
+            <div *ngIf="sameUser">
+                <form [formGroup]="postForm" (ngSubmit)="CreateMessage()" id="skrivTekst">
                     <mat-form-field color="accent" appearance="outline" style="margin-bottom: -1.25em">
                         <mat-label>whats on your mind</mat-label>
-                        <textarea matInput #post maxlength="256" cdkTextareaAutosize cdkAutosizeMinRows="2" cdkAutosizeMaxRows="5" formControlName="postText"></textarea>
+                        <textarea autofocus matInput #post maxlength="1275" cdkTextareaAutosize cdkAutosizeMinRows="2" cdkAutosizeMaxRows="5" formControlName="postText" (keyup)="handleKeyUp($event)"></textarea>
                         <button mat-button type="submit" id="sendButton">
                             <mat-icon>send</mat-icon>
                         </button>
-                        <mat-hint align="start">{{ post.value.length }} / 256</mat-hint>
+                        <mat-hint align="start">{{ post.value.length }} / 1275</mat-hint>
                     </mat-form-field>
                 </form>
             </div>

@@ -23,7 +23,7 @@
     <!-- [openedSubject]="openedSubject" -->
     <button class="navKnap test" (click)="Profil(); drawer.toggle();">Profil</button> <br>
     <button class="navKnap" routerLink="/forside" (click)="drawer.toggle()">Forside</button> <br>
-    <button class="navKnap" routerLink="/beskeder" (click)="drawer.toggle()">Beskeder</button> <br>
+    <button class="navKnap" (click)="Beskeder(); drawer.toggle();">Beskeder</button> <br>
     <button class="navKnap" routerLink="/indstillinger" id="settings" (click)="drawer.toggle()">Indstillinger</button> <br>
     <button class="navKnap" (click)="ClearStorage(); drawer.toggle();" routerLink="/">Log ud</button> <br>
 

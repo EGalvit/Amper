@@ -41,6 +41,11 @@ export class AppComponent implements OnInit{
     this._router.navigateByUrl(`/profil/${this.userid}`);
   }
 
+  Beskeder() {
+    this.userid = localStorage.getItem("UserID");
+    this._router.navigateByUrl(`/beskeder/${this.userid}`);
+  }
+
   search() {
     this._router.navigate(['/search'],{queryParams: {'': this.searchForm.value.searchInput}});
   }

@@ -79,15 +79,16 @@ export class HttpService {
     this.postData = {
       senderid: UserID,
       message: Message,
-      recipientid: ReciverID,
-      sendername: 1,
-      recipientname: 1,
-      date: 1
+      recipientid: ReciverID
     };
     return this.http.post(`https://localhost:44358/api/Message/post`, this.postData);
   }
 
   MessageGet(lastRowNumber: number, senderid: number, reciverid: number) {
     return this.http.get(`https://localhost:44358/api/Message/get/values?senderid=${senderid}&reciverid=${reciverid}&lastRowNumber=${lastRowNumber}`);
+  }
+
+  MessagePersonGet(lastRowNumber: number, ownID: number){
+    return this.http.get(`https://localhost:44358/api/MessagePerson/get/values?ownID=${ownID}&lastRowNumber=${lastRowNumber}`);
   }
 }

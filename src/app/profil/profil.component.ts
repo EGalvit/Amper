@@ -3,7 +3,7 @@ import { HttpService } from "../helpers/http.service";
 import { FormBuilder, FormGroup, Validators, FormControl, FormGroupDirective, NgForm } from '@angular/forms';
 import { ObjectUnsubscribedError } from 'rxjs';
 import { darkblue } from 'color-name';
-import { ActivatedRoute } from "@angular/router";
+import { ActivatedRoute, Router } from "@angular/router";
 
 @Component({
   selector: 'app-profil',
@@ -19,11 +19,12 @@ export class ProfilComponent implements OnInit {
   likeCount: any;
   ampCount: any;
   textPost: any;
+  beskedid: any;
   
   opslagForm: FormGroup;
   opslagText = new FormControl(null, [Validators.required]);
 
-  constructor(private _http: HttpService,  private fb: FormBuilder, private route: ActivatedRoute){ 
+  constructor(private _http: HttpService,  private fb: FormBuilder, private route: ActivatedRoute, private _route: Router){ 
     this.opslagForm = this.fb.group({opslagText: this.opslagText})
   }
 
@@ -65,6 +66,10 @@ export class ProfilComponent implements OnInit {
       }
       document.getElementById("likeCount"+index).innerHTML = this.likeCount;
     });
+  }
+  Beskeder() {
+    this.beskedid = this.route.snapshot.paramMap.get("id");
+    this._route.navigateByUrl(`/beskeder/${this.beskedid}`);
   }
   Amp(PostID: number, index: number){
     console.log("Amp virker ikke!!!")

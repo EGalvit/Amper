@@ -5,17 +5,30 @@ $midGray: #414141;
 $lightGray: #525252;
 $orange: #ff803c;
 
+@media (max-width: 1200px) {
+    .mainbox {
+        width: 100% !important;
+        margin: 0 !important;
+    }
+    .modtager .opslagText {
+        width: 60vw;
+    }
+    .sender .opslagText {
+        width: 60vw;
+    }
+
+}
 .mainbox {
     padding: 1px;
     border: 1px;
     border-color: #ff803c;
     position: relative;
-    width: 50%;
-    margin-right: 25%;
-    margin-left: 25%;
-    height: 100%;
+    width: 50vw;
+    margin-right: 25vw;
+    margin-left: 25vw;
+    height: 100vh;
     background-color: #414141;
-    overflow: auto;
+    overflow: scroll;
     padding-top: 64px;
 }
 .fullbox {
@@ -65,5 +78,175 @@ $orange: #ff803c;
 
     mat-form-field {
         width: 100%;
+    }
+}
+
+#test{
+    margin-top: 64px;
+    position: absolute;
+    height: 93.2vh;
+    overflow: auto;
+}
+
+#testButton{
+    color: black;
+}
+
+.even{
+    // position: relative;
+    // margin-top: -75vh;
+    // z-index: 99;
+    width: 25vw;
+    margin-left: 75vw;
+    height: 8vh;
+    background-color: $darkGray;
+    .testButton{
+        height: 100%;
+        width: 100%;
+        background-color: transparent;
+        border-style: none;
+        font-size: 200%;
+        padding-top: 1.3vh;
+        padding-bottom: 1.3vh;
+        &:hover {
+            color: #ff803c;
+            cursor: pointer;
+            transition: .5s;
+      
+        }
+    }
+}
+.odd{
+    // position: relative;
+    // margin-top: -75vh;
+    // z-index: 99;
+    width: 25vw;
+    margin-left: 75vw;
+    height: 8vh;
+    background-color: $lightGray;
+    .testButton{
+        height: 100%;
+        width: 100%;
+        background-color: transparent;
+        border-style: none;
+        font-size: 200%;
+        padding-top: 1.3vh;
+        padding-bottom: 1.3vh;
+        &:hover {
+            color: #ff803c;
+            cursor: pointer;
+            transition: .5s;
+      
+        }
+    }
+}
+
+.sender{
+    // position: absolute;
+    display: inline-block;
+    border-radius: 15px;
+    width: 64.5%;
+    // height: auto;
+    background-color: lighten($color: $lightGray, $amount: 13%);
+    margin-left: 30%;
+    margin-top: 2.5%;
+    display: flex;
+    padding: 1.5%;
+
+    .opslagButton {
+        cursor: pointer;
+        position: relative;
+        display: inline;
+        background-color: lighten($color: $lightGray, $amount: 13%);
+        border: 0;
+    }
+
+    .opslagButton .lite {
+        display: none;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 99;
+    }
+
+    .opslagButton:hover .lite {
+        display: inline;
+    }
+
+    .opslagButton .kommentarLite {
+        top: 1px;
+    }
+
+    #profilnavnopslag {
+        position: absolute;
+        padding: -3px;
+        margin-top: 2%;
+        font-size: 32px;
+        margin-left: 1.8%;
+        font-weight: 600;
+        cursor: pointer;
+    }
+
+    .opslagText {
+        width: 30vw;
+        height: 100%;
+        margin: 3% 3% 0% 0.5vw;
+        color: white;
+        word-wrap: break-word;
+        // text-align: left;
+    }
+}
+.modtager{
+    // position: absolute;
+    display: inline-block;
+    border-radius: 15px;
+    width: 64.5%;
+    // height: auto;
+    background-color: lighten($color: $lightGray, $amount: 2%);
+    margin-left: 2.5%;
+    margin-top: 2.5%;
+    padding: 1.5%;
+
+    .opslagButton {
+        cursor: pointer;
+        position: relative;
+        display: inline;
+        background-color: lighten($color: $lightGray, $amount: 2%);
+        border: 0;
+    }
+
+    .opslagButton .lite {
+        display: none;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 99;
+    }
+
+    .opslagButton:hover .lite {
+        display: inline;
+    }
+
+    .opslagButton .kommentarLite {
+        top: 1px;
+    }
+
+    #profilnavnopslag {
+        position: absolute;
+        padding: -3px;
+        margin-top: 2%;
+        font-size: 32px;
+        margin-left: 1.8%;
+        font-weight: 600;
+        cursor: pointer;
+    }
+
+    .opslagText {
+        width: 30vw;
+        height: 100%;
+        margin: 3% 3% 0% 0.5vw;
+        color: white;
+        word-wrap: break-word;
+        // text-align: left;
     }
 }

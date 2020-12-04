@@ -19,7 +19,7 @@ import { AuthenticationService } from "./helpers/authentication.service";
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SearchComponent } from './search/search.component';
 import { ScrollToBottomDirective } from './scroll-to-bottom.directive';
-
+import { OrderModule } from 'ngx-order-pipe';
 
 
 @NgModule({
@@ -46,7 +46,8 @@ import { ScrollToBottomDirective } from './scroll-to-bottom.directive';
     ReactiveFormsModule,
     BrowserAnimationsModule,
     AngularMaterialModule,
-    CommonModule
+    CommonModule,
+    OrderModule
   ],
   exports: [
     AngularMaterialModule
