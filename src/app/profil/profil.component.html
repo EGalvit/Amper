@@ -1,14 +1,14 @@
-<body>
+<body *ngIf="user">
     <div class="fullbox">
         <div class="mainbox" (scroll)="onScroll($event)">
             <div id="profilbilleder">
                 <img id="background" alt="Amper" src="assets/img/test2cover.png" height="100%" width="100%">
                 <img id="logo" alt="Amper" src="assets/img/AmperLogo - Darker.png" height="120px">
-                <label id="profilnavn">Amper</label>
+                <label id="profilnavn">{{user.username}}</label>
             </div>
             <div id="profilinfo">
                 <div id="beskrivelsebox">
-                    <label id="beskrivelse">Egen beskrivelse</label>
+                    <label id="beskrivelse">{{user.userdescription}}</label>
                 </div>
                 <button id="følgknap" class="button">Følg</button> <br>
                 <div id="infocontainer">
@@ -16,10 +16,10 @@
                         <label id="by">By, Land</label>
                     </div>
                     <div id="følgerebox">
-                        <label id="følgere">Følgere 2,3 mio.</label>
+                        <label id="følgere"><strong>Followers</strong> {{user.followercount}}</label>
                     </div>
                     <div id="følgerbox">
-                        <label id="følger">Følger 2</label>
+                        <label id="følger"><strong>Following</strong> {{user.followingcount}}</label>
                     </div>
                 </div>
                 <button id="besked" class="button">Send besked</button>

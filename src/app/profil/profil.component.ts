@@ -19,6 +19,7 @@ export class ProfilComponent implements OnInit {
   likeCount: any;
   ampCount: any;
   textPost: any;
+  user: object;
   
   opslagForm: FormGroup;
   opslagText = new FormControl(null, [Validators.required]);
@@ -32,6 +33,7 @@ export class ProfilComponent implements OnInit {
     this.userID = localStorage.getItem("UserID");
     this.id = this.route.snapshot.paramMap.get("id");
     this.LoadMore();
+    this._http.UserGet(this.id).subscribe((data) => {this.user = data; console.log(data)});
   }
 
   LoadMore(){
