@@ -29,7 +29,6 @@ export class ProfilComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    // this.id = localStorage.getItem('UserID')
     this.userID = localStorage.getItem("UserID");
     this.id = this.route.snapshot.paramMap.get("id");
     this.LoadMore();

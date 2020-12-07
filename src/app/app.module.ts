@@ -18,7 +18,6 @@ import { TestingComponent } from './testing/testing.component';
 import { AuthenticationService } from "./helpers/authentication.service";
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SearchComponent } from './search/search.component';
-import { ScrollToBottomDirective } from './scroll-to-bottom.directive';
 import { OrderModule } from 'ngx-order-pipe';
 
 
@@ -34,8 +33,7 @@ import { OrderModule } from 'ngx-order-pipe';
     TestingComponent,
     FødselsdagDialog,
     BrugernavnDialog,
-    SearchComponent,
-    ScrollToBottomDirective,
+    SearchComponent
   ],
   imports: [
     FormsModule,

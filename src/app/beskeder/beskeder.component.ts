@@ -1,11 +1,8 @@
-import { Component, AfterViewInit, ViewChild, OnInit, ElementRef} from '@angular/core'
-import {MatSnackBar} from '@angular/material/snack-bar'
+import { Component, ViewChild, OnInit, ElementRef} from '@angular/core'
 import { HttpService } from '../helpers/http.service';
-import { FormBuilder, FormGroup, Validators, FormControl, FormGroupDirective, NgForm } from '@angular/forms';
-import { AfterContentChecked, AfterViewChecked } from '@angular/core';
-import { ScrollToBottomDirective } from '../scroll-to-bottom.directive';
+import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms';
+import { AfterViewChecked } from '@angular/core';
 import { ActivatedRoute, Router } from "@angular/router";
-import Button from "@material-ui/core/Button";
 
 @Component({
   selector: 'app-beskeder',
@@ -15,8 +12,6 @@ import Button from "@material-ui/core/Button";
 export class BeskederComponent implements OnInit, AfterViewChecked {
 
   @ViewChild('scrollMe') private myScrollContainer: ElementRef;
-  @ViewChild(ScrollToBottomDirective)
-  scroll: ScrollToBottomDirective;
   id: any;
   ownID: any;
   messages: Object;
@@ -24,7 +19,6 @@ export class BeskederComponent implements OnInit, AfterViewChecked {
   lastRowNumber: number = 0;
   senderid: any;
   reciverid: any;
-  // message: string;
   posterid: any;
   scrollBottom: any;
   sameUser: Boolean = false;
@@ -53,8 +47,6 @@ export class BeskederComponent implements OnInit, AfterViewChecked {
     this.LoadPerson();
     this.LoadMore();
     this.scrollToBottom();
-    // window.scrollBy(0,50);
-    // document.querySelector("#opslagContainer").scrollTo(0,document.querySelector("#opslagContainer").scrollHeight);
   }
 
   ngAfterViewChecked() {        
@@ -89,7 +81,6 @@ export class BeskederComponent implements OnInit, AfterViewChecked {
 
   ChangeMessenger(changeTo){
     this._route.navigateByUrl(`/beskeder/${changeTo}`);
-    // this.refresh();
   }
 
   refresh() {

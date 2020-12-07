@@ -48,33 +48,12 @@ $orange: #ff803c;
 .mat-radio-button ~ .mat-radio-button {
     margin-left: 16px;
 }
-// #skrivTekst{
-//     width: 99.6%;
-//     height: 15vh;
-//     margin-top: 4vh;
-//     margin-bottom: 8vh;
-//     color: $black;
-//     background: $lightGray;
-//     // border: 10px;
-//     // border-style: none;
-//     border-color: $orange;
-//     border-radius: 20px;
-// }
 #skrivTekst {
-    // position: absolute;
-    // visibility: hidden;
-    // height: auto;
-    // display: inline-block;
-    // border-radius: 15px;
     width: 100%;
     height: auto;
-    // background-color: #525252;
     margin: auto;
     margin-top: 2%;
-    // padding: 1.5%;
     margin-bottom: 10vh;
-    // padding-bottom: 3.5%;
-    // position: relative;
 
     mat-form-field {
         width: 100%;
@@ -93,9 +72,6 @@ $orange: #ff803c;
 }
 
 .even{
-    // position: relative;
-    // margin-top: -75vh;
-    // z-index: 99;
     width: 25vw;
     margin-left: 75vw;
     height: 8vh;
@@ -117,9 +93,6 @@ $orange: #ff803c;
     }
 }
 .odd{
-    // position: relative;
-    // margin-top: -75vh;
-    // z-index: 99;
     width: 25vw;
     margin-left: 75vw;
     height: 8vh;
@@ -142,11 +115,9 @@ $orange: #ff803c;
 }
 
 .sender{
-    // position: absolute;
     display: inline-block;
     border-radius: 15px;
     width: 64.5%;
-    // height: auto;
     background-color: lighten($color: $lightGray, $amount: 13%);
     margin-left: 30%;
     margin-top: 2.5%;
