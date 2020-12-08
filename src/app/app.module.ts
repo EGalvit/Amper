@@ -18,7 +18,6 @@ import { TestingComponent } from './testing/testing.component';
 import { AuthenticationService } from "./helpers/authentication.service";
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SearchComponent } from './search/search.component';
-import { OrderModule } from 'ngx-order-pipe';
 
 
 @NgModule({
@@ -45,7 +44,6 @@ import { OrderModule } from 'ngx-order-pipe';
     BrowserAnimationsModule,
     AngularMaterialModule,
     CommonModule,
-    OrderModule
   ],
   exports: [
     AngularMaterialModule
