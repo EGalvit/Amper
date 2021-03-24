@@ -48,7 +48,7 @@ export class ForsideComponent implements OnInit {
     // this.lastRowNumber = 0;
     // this.LoadMore();
     const formValue = this.postForm.value;
-    this._http.HomePost(this.id, formValue.postText).toPromise().then((data) => {
+    this._http.HomePost(this.id, formValue.postText, formValue.postImage).toPromise().then((data) => {
       console.log(data);
     });
     this.postForm.reset();
@@ -58,6 +58,7 @@ export class ForsideComponent implements OnInit {
 
   //converter et uploadet billed til en base64 string som kan sendes til apiet
   onFileChange($event){
+    const formValue = this.postForm.value;
     // console.log($event.target.files[0]);
     let me = this;
     let file = $event.target.files[0];
@@ -67,6 +68,7 @@ export class ForsideComponent implements OnInit {
       //me.modelvalue = reader.result;
       console.log(reader.result);
       me.imageName = file.name;
+      formValue.postImage = "test Fake image"//reader.result;
     };
     reader.onerror = function (error) {
       console.log('Error: ', error);
@@ -96,7 +98,7 @@ export class ForsideComponent implements OnInit {
     });
   }
   Amp(PostID: number, index: number){
-    console.log("Amp virker ikke!!!")
+    console.log("Amp virker!!!")
     // this.ampCount = document.getElementById("ampCount"+index).innerHTML;
     // this.textPost = document.getElementById("opslagtext"+index).innerHTML;
 

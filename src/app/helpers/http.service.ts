@@ -63,10 +63,11 @@ export class HttpService {
     return this.http.get(`https://localhost:44358/api/User/get/values?id=${id}`)
   }
 
-  HomePost(UserID: number, post: string){
+  HomePost(UserID: number, post: string, images: string){
     this.postData = {
       posterid: UserID,
-      post: post
+      post: post,
+      images: images
     };
     return this.http.post(`https://localhost:44358/api/Post/post`, this.postData);
   }
