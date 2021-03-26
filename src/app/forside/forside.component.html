@@ -39,6 +39,9 @@
                             <label id="profilnavnopslag" routerLink="/profil/{{post.posterid}}">{{post.postername}}</label> <br>
                             <div id="opslagindhold">
                                 <p id="opslagtext{{i}}" class="opslagText">{{post.post}}</p> <br>
+                                <div *ngIf="post.postImage">
+                                    <img src="{{post.postImage}}" style="max-width:100%;">
+                                </div>
                             </div>
                             <div id="opslagreaktioner">
                                 <div id="likebox">

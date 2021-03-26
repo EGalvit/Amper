@@ -52,8 +52,8 @@ export class ForsideComponent implements OnInit {
       console.log(data);
     });
     this.postForm.reset();
-    console.log(formValue.postText);
-    console.log(formValue.postImage);
+    // console.log(formValue.postText);
+    // console.log(formValue.postImage);
   }
 
   //converter et uploadet billed til en base64 string som kan sendes til apiet
@@ -66,9 +66,9 @@ export class ForsideComponent implements OnInit {
     reader.readAsDataURL(file);
     reader.onload = function () {
       //me.modelvalue = reader.result;
-      console.log(reader.result);
+      // console.log(reader.result);
       me.imageName = file.name;
-      formValue.postImage = "test Fake image"//reader.result;
+      formValue.postImage = reader.result;
     };
     reader.onerror = function (error) {
       console.log('Error: ', error);
