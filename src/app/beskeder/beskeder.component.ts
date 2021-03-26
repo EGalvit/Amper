@@ -64,7 +64,7 @@ export class BeskederComponent implements OnInit, AfterViewChecked {
   CreateMessage(){
     const formValue = this.postForm.value;
     this._http.MessagePost(this.id, formValue.postText, this.reciverid).toPromise().then((data) => {
-      console.log(data);
+      // console.log(data);
     });
     this.postForm.reset();
     console.log(formValue.postText);
