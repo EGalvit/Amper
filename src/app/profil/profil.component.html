@@ -10,7 +10,7 @@
                 <div id="beskrivelsebox">
                     <label id="beskrivelse">{{user.userdescription}}</label>
                 </div>
-                <button id="følgknap" class="button">Følg</button> <br>
+                <button *ngIf="hideButton" id="følgknap" class="button" (click)="Follow()">Følg</button> <br>
                 <div id="infocontainer">
                     <div id="landbox">
                         <label id="by">By, Land</label>
@@ -22,7 +22,7 @@
                         <label id="følger"><strong>Following</strong> {{user.followingcount}}</label>
                     </div>
                 </div>
-                <button id="besked" class="button" (click)="Beskeder()">Send besked</button>
+                <button *ngIf="hideButton" id="besked" class="button" (click)="Beskeder()">Send besked</button>
             </div>
             <div id="opslagContainer">
                 <ul *ngIf="posts">

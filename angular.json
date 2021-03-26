@@ -127,5 +127,8 @@
       }
     }
   },
-  "defaultProject": "Amper"
+  "defaultProject": "Amper",
+  "cli": {
+    "analytics": "9bc35e85-4acb-4564-b5f5-1226e722789b"
+  }
 }

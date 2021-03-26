@@ -21,7 +21,10 @@ export class ProfilComponent implements OnInit {
   textPost: any;
   beskedid: any;
   user: object;
-  
+  hideButton: Boolean = false;
+  followerid: any;
+  followedid: any;
+
   opslagForm: FormGroup;
   opslagText = new FormControl(null, [Validators.required]);
 
@@ -32,8 +35,18 @@ export class ProfilComponent implements OnInit {
   ngOnInit(): void {
     this.userID = localStorage.getItem("UserID");
     this.id = this.route.snapshot.paramMap.get("id");
+    this.HideButton();
     this.LoadMore();
     this._http.UserGet(this.id).subscribe((data) => {this.user = data; console.log(data)});
+  }
+
+  HideButton(){
+    if (this.userID == this.id){
+      this.hideButton = false;
+    }
+    else {
+      this.hideButton = true;
+    }
   }
 
   LoadMore(){
@@ -52,6 +65,15 @@ export class ProfilComponent implements OnInit {
       console.log("End");
     }
   }
+
+  Follow(){
+    this.followerid = localStorage.getItem("UserID");
+    this.followedid = this.route.snapshot.paramMap.get("id");
+    this._http.Follow(this.followerid, this.followedid).toPromise().then((data) => {
+      console.log(data);
+    });
+  }
+
   Like(PostID: number, index: number){
     this.likeCount = document.getElementById("likeCount"+index).innerHTML;
     
